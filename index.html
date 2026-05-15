@@ -1,0 +1,220 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>NVANE | Luxury Blazers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #120e0c; 
+            --gold-primary: #d4bc8e;
+            --whatsapp-green: #25D366;
+            --soft-bg: #f9f9f9;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: var(--brand-dark);
+            overflow-x: hidden;
+        }
+
+        /* --- شاشة الترحيب --- */
+        #landing-screen {
+            height: 100vh; width: 100%;
+            background-color: var(--brand-dark);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            position: fixed; top: 0; left: 0; z-index: 5000;
+            transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        
+        .deer-svg {
+            width: 80px; height: 80px;
+            fill: none; stroke: var(--gold-primary);
+            stroke-width: 1.5; stroke-linecap: round;
+            margin-bottom: 5px;
+        }
+
+        #landing-screen .logo-big { 
+            font-family: 'Cormorant Garamond', serif; 
+            color: var(--gold-primary); 
+            font-size: 55px; 
+            letter-spacing: 15px; 
+            text-transform: uppercase; 
+            line-height: 1.2;
+            margin-left: -15px;
+        }
+
+        .blazers-subtext {
+            color: var(--gold-primary);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .explore-btn { 
+            background: none; border: 1px solid var(--gold-primary); 
+            color: var(--gold-primary); padding: 15px 50px; 
+            font-size: 11px; text-transform: uppercase; letter-spacing: 3px; 
+            cursor: pointer; margin-top: 60px;
+        }
+
+        /* --- الهيدر --- */
+        header { 
+            background-color: var(--brand-dark); padding: 20px 0; 
+            text-align: center; position: sticky; top: 0; z-index: 1000;
+        }
+        header .logo { 
+            font-family: 'Cormorant Garamond', serif; font-size: 22px; 
+            color: var(--gold-primary); letter-spacing: 6px; text-transform: uppercase; 
+        }
+
+        /* --- عرض المنتجات --- */
+        .feed-container { padding: 25px; max-width: 500px; margin: auto; }
+        .product-card { cursor: pointer; margin-bottom: 40px; }
+        .img-container {
+            width: 100%; height: 42vh; overflow: hidden; border-radius: 4px;
+            margin-bottom: 15px; background: var(--soft-bg);
+        }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .product-meta { text-align: right; }
+        .product-meta h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 2px; }
+        .product-meta .desc { font-size: 13px; color: #888; margin-bottom: 8px; }
+        .product-meta .price { font-weight: 600; font-size: 16px; }
+
+        /* --- صفحة تفاصيل المنتج --- */
+        #pdp-screen {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: #fff; z-index: 6000; overflow-y: auto;
+            transform: translateY(100%); transition: transform 0.5s ease;
+        }
+        #pdp-screen.active { transform: translateY(0); }
+        
+        .pdp-header { padding: 45px 25px 15px; display: flex; justify-content: space-between; align-items: center; }
+        .pdp-img-box { width: 100%; padding: 0 20px; }
+        .pdp-img-box img { width: 100%; border-radius: 2px; }
+        
+        .pdp-content { padding: 25px; text-align: right; }
+        .pdp-title-row { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 5px; }
+        .pdp-title-row h1 { font-family: 'Cormorant Garamond', serif; font-size: 26px; }
+        .pdp-price { font-size: 20px; font-weight: 600; margin-bottom: 25px; }
+
+        /* اختيار المقاس */
+        .section-label { font-size: 11px; color: #bbb; text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; }
+        .size-selector { display: flex; flex-direction: row-reverse; gap: 10px; margin-bottom: 30px; }
+        .size-box {
+            width: 50px; height: 50px; border: 1.5px solid #eee; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s;
+        }
+        .size-box.active { border-color: var(--brand-dark); background: var(--brand-dark); color: #fff; }
+
+        .order-wa-button {
+            display: block; width: 100%; background: #120e0c; color: var(--gold-primary);
+            text-align: center; text-decoration: none; padding: 22px; border-radius: 50px;
+            font-weight: 600; font-size: 14px; letter-spacing: 2px; margin-bottom: 40px;
+        }
+
+        .pay-option {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px; border: 1.5px solid #eee; border-radius: 15px;
+            margin-bottom: 12px; cursor: pointer;
+        }
+        .pay-option.active { border-color: var(--brand-dark); }
+        .check-icon { width: 22px; height: 22px; border: 1.5px solid #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .pay-option.active .check-icon { background: #2ecc71; border-color: #2ecc71; color: white; }
+
+        .wa-float {
+            position: fixed; bottom: 30px; right: 25px; width: 60px; height: 60px;
+            background: var(--whatsapp-green); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 4000; text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="landing-screen">
+    <svg class="deer-svg" viewBox="0 0 100 100">
+        <path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke-width="2"/>
+        <path d="M40 45 L60 45 L55 75 L45 75 Z" fill="none" stroke-width="2.5"/>
+        <path d="M48 55 A2 2 0 1 1 52 55 A2 2 0 1 1 48 55" fill="var(--gold-primary)"/>
+    </svg>
+    <div class="logo-big">NVANE</div>
+    <div class="blazers-subtext">Blazers</div>
+    <button class="explore-btn" onclick="enterStore()">Explore Collection</button>
+</div>
+
+<header><div class="logo">NVANE</div></header>
+
+<div class="feed-container">
+    <div class="product-card" onclick="openPDP('Butter Yellow Set', '46', 'https://a.top4top.io/p_37878wrd51.jpeg')">
+        <div class="img-container"><img src="https://a.top4top.io/p_37878wrd51.jpeg"></div>
+        <div class="product-meta">
+            <h3>🍦 Butter Yellow Set</h3>
+            <div class="desc">(نفنوف + بليزر)</div>
+            <div class="price">KD 46</div>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/96564446249" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<div id="pdp-screen">
+    <div class="pdp-header">
+        <i class="fas fa-chevron-right" onclick="closePDP()" style="font-size: 22px;"></i>
+    </div>
+    <div class="pdp-img-box"><img id="p-img" src=""></div>
+    <div class="pdp-content">
+        <h1 id="p-title" style="font-family: 'Cormorant Garamond', serif;">Product</h1>
+        <div class="pdp-price">KD <span id="p-price">0</span></div>
+
+        <span class="section-label">Size / المقاس</span>
+        <div class="size-selector">
+            <div class="size-box" onclick="setSize('XL', this)">XL</div>
+            <div class="size-box" onclick="setSize('L', this)">L</div>
+            <div class="size-box active" onclick="setSize('M', this)">M</div>
+            <div class="size-box" onclick="setSize('S', this)">S</div>
+        </div>
+
+        <a id="wa-final-link" href="#" class="order-wa-button" target="_blank">ORDER VIA WHATSAPP</a>
+
+        <div class="pay-option active" onclick="setPay('ومض ⚡', this)">
+            <div class="check-icon"><i class="fas fa-check"></i></div>
+            <div style="font-weight: 600;">ومض عبر واتساب</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const PHONE = "96564446249";
+    let currentP = ""; let currentPay = "ومض ⚡"; let currentSize = "M";
+
+    function enterStore() { document.getElementById('landing-screen').style.transform = 'translateY(-100%)'; }
+    function openPDP(name, price, img) {
+        currentP = name;
+        document.getElementById('p-title').innerText = name;
+        document.getElementById('p-price').innerText = price;
+        document.getElementById('p-img').src = img;
+        document.getElementById('pdp-screen').style.display = 'block';
+        setTimeout(() => { document.getElementById('pdp-screen').classList.add('active'); updateLink(); }, 10);
+    }
+    function closePDP() { document.getElementById('pdp-screen').classList.remove('active'); setTimeout(() => document.getElementById('pdp-screen').style.display = 'none', 500); }
+    function setSize(val, el) { currentSize = val; document.querySelectorAll('.size-box').forEach(b => b.classList.remove('active')); el.classList.add('active'); updateLink(); }
+    function setPay(val, el) { currentPay = val; document.querySelectorAll('.pay-option').forEach(o => o.classList.remove('active')); el.classList.add('active'); updateLink(); }
+    function updateLink() {
+        const msg = `مرحباً NVANE ✨\nأود طلب: ${currentP}\nالمقاس: ${currentSize}\nالدفع: ${currentPay}`;
+        document.getElementById('wa-final-link').href = `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+    }
+</script>
+</body>
+</html>
+
+```
