@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>NVANE | Luxury Collection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-dark: #261c14; 
             --gold-primary: #b89a6c;
-            --gold-light: #e5d5be;
+            --gold-light: #ebdcc5;
             --whatsapp-green: #25D366;
             --bg-cream: #fbf9f6;
         }
@@ -51,17 +51,74 @@
             background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 14px 45px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; margin-top: 55px;
         }
 
-        /* --- الهيدر الفخم الثابت والمعدل --- */
+        /* --- الهيدر الجديد المتطابق مع الشعار الأخير بالظبط --- */
         header { 
-            background-color: var(--brand-dark); padding: 30px 40px; display: flex; justify-content: center; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background-color: var(--brand-dark); 
+            padding: 35px 20px 30px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        header .header-wrap {
-            width: 100%; max-width: 1200px; display: flex; justify-content: space-between; align-items: center;
+        .header-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 320px; /* تحديد العرض ليتناسق امتداد الخط */
         }
-        header .logo { 
-            font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 700; color: var(--gold-light); letter-spacing: 14px; text-transform: uppercase; margin: auto; transform: translateX(15px);
+        .header-wrap .logo { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 56px; /* تكبير الخط ليكون بارز وملك مثل الصورة */
+            font-weight: 300; 
+            color: var(--gold-light); 
+            letter-spacing: 8px; 
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 12px;
+            margin-left: -8px; 
         }
-        header .deer-mini { width: 32px; height: 32px; fill: none; stroke: var(--gold-primary); stroke-width: 1.5; }
+        /* تصميم الخط النحيف الممتد مع النجمة بالمنتصف */
+        .logo-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .logo-divider::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 0.5px;
+            background-color: rgba(235, 220, 197, 0.35); /* خط نحيف جداً وناعم */
+            z-index: 1;
+        }
+        .logo-divider .sparkle {
+            color: var(--gold-light);
+            font-size: 11px;
+            background-color: var(--brand-dark); /* لقطع الخط بالخلفية */
+            padding: 0 10px;
+            position: relative;
+            z-index: 2;
+            line-height: 1;
+        }
+        .header-wrap .sub-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            font-weight: 400;
+            color: rgba(235, 220, 197, 0.6);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-left: -5px;
+        }
 
         /* --- حاوية الهيكل العام للموقع --- */
         .main-layout {
@@ -69,25 +126,21 @@
             display: flex; flex-direction: column; gap: 30px;
         }
 
-        /* البانر الإعلاني */
+        /* البانر الإعلاني المتناسق بدون SOON */
         .hero-banner-wrapper { width: 100%; }
         .hero-banner {
-            background: #ffffff; border: 1px solid #eae1d4; border-radius: 4px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 30px rgba(184,154,108,0.03);
+            background: #ffffff; border: 1px solid #eae1d4; border-radius: 4px; padding: 50px 20px; text-align: center; box-shadow: 0 10px 30px rgba(184,154,108,0.03);
         }
-
-        /* تصميم الموز والـ SOON الفني الراق الذهبي */
-        .illustration-box {
-            position: relative; max-width: 600px; margin: 0 auto 30px auto; display: flex; justify-content: center; align-items: center; min-height: 200px;
+        .hero-banner h2 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 46px; 
+            color: var(--gold-primary); 
+            margin-bottom: 15px; 
+            font-weight: 700; 
+            letter-spacing: 4px;
+            text-transform: uppercase;
         }
-        .banana-vector { width: 100%; max-height: 220px; object-fit: contain; opacity: 0.85; }
-        
-        .soon-ribbon {
-            position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 700; color: var(--brand-dark); letter-spacing: 12px; text-transform: uppercase; background: rgba(255, 255, 255, 0.92); padding: 12px 45px; border: 2.5px solid var(--gold-primary); border-radius: 50px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 15px;
-        }
-        .soon-ribbon svg { width: 32px; height: 32px; fill: var(--gold-primary); }
-
-        .hero-banner h2 { font-family: 'Cormorant Garamond', serif; font-size: 38px; color: var(--brand-dark); margin-bottom: 10px; font-weight: 400; }
-        .hero-banner p { font-size: 13px; color: #7a7065; letter-spacing: 1px; line-height: 1.6; }
+        .hero-banner p { font-size: 14px; color: #7a7065; letter-spacing: 1px; line-height: 1.6; font-weight: 500; }
 
         /* حاوية المنتجات بالمنتصف */
         .products-wrapper { 
@@ -180,10 +233,10 @@
 <header>
     <div class="header-wrap">
         <div class="logo">NVANE</div>
-        <svg class="deer-mini" viewBox="0 0 100 100">
-            <path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke-width="2"/>
-            <path d="M40 45 L60 45 L55 75 L45 75 Z" fill="none" stroke-width="2.5"/>
-        </svg>
+        <div class="logo-divider">
+            <div class="sparkle">✦</div>
+        </div>
+        <div class="sub-logo">BLAZERS FOR HER</div>
     </div>
 </header>
 
@@ -191,18 +244,6 @@
     
     <div class="hero-banner-wrapper">
         <div class="hero-banner">
-            <div class="illustration-box">
-                <svg class="banana-vector" viewBox="0 0 400 200" fill="none">
-                    <path d="M50 180 C80 120, 120 70, 200 60 C280 50, 310 100, 350 140" stroke="#b89a6c" stroke-width="1" stroke-dasharray="4 4"/>
-                    <path d="M30 130 C90 70, 160 80, 220 120" stroke="#ebdcc5" stroke-width="1.5"/>
-                    <path d="M180 50 C240 80, 320 60, 370 110" stroke="#ebdcc5" stroke-width="1.5"/>
-                </svg>
-                <div class="soon-ribbon">
-                    <svg viewBox="0 0 100 100" style="width:28px; height:28px;"><path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke="#b89a6c" fill="none" stroke-width="4"/></svg>
-                    <span>SOON</span>
-                    <svg viewBox="0 0 100 100" style="width:28px; height:28px;"><path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke="#b89a6c" fill="none" stroke-width="4"/></svg>
-                </div>
-            </div>
             <h2>The New Collection</h2>
             <p>Discover the essence of style: NVANE luxury blazers for women</p>
         </div>
