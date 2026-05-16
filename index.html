@@ -7,20 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>NVANE | Luxury Blazers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-dark: #120e0c; 
-            --gold-primary: #d4bc8e;
+            --brand-dark: #261c14; 
+            --gold-primary: #b89a6c;
+            --gold-light: #e5d5be;
             --whatsapp-green: #25D366;
-            --soft-bg: #f9f9f9;
+            --bg-cream: #fbf9f6;
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
         
         body { 
             font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff;
+            background-color: var(--bg-cream);
             color: var(--brand-dark);
             overflow-x: hidden;
         }
@@ -65,63 +66,204 @@
             color: var(--gold-primary); padding: 15px 50px; 
             font-size: 11px; text-transform: uppercase; letter-spacing: 3px; 
             cursor: pointer; margin-top: 60px;
+            transition: 0.3s;
+        }
+        .explore-btn:hover {
+            background: var(--gold-primary);
+            color: var(--brand-dark);
         }
 
-        /* --- الهيدر --- */
+        /* --- الهيدر الفخم --- */
         header { 
-            background-color: var(--brand-dark); padding: 20px 0; 
-            text-align: center; position: sticky; top: 0; z-index: 1000;
+            background-color: var(--brand-dark); 
+            padding: 20px 40px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        header .header-wrap {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         header .logo { 
-            font-family: 'Cormorant Garamond', serif; font-size: 22px; 
-            color: var(--gold-primary); letter-spacing: 6px; text-transform: uppercase; 
+            font-family: 'Cormorant Garamond', serif; font-size: 26px; 
+            color: var(--gold-light); letter-spacing: 8px; text-transform: uppercase; 
+            margin-right: auto;
+            margin-left: auto;
+            transform: translateX(15px);
+        }
+        header .deer-mini {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: var(--gold-primary);
+            stroke-width: 1.5;
         }
 
-        /* --- عرض المنتجات --- */
-        .feed-container { padding: 25px; max-width: 500px; margin: auto; }
-        .product-card { cursor: pointer; margin-bottom: 40px; }
+        /* --- التصميم الجديد للشبكة (Editorial Grid) --- */
+        .main-layout {
+            max-width: 1300px;
+            margin: 40px auto;
+            padding: 0 25px;
+            display: grid;
+            grid-template-columns: 280px 1fr 280px;
+            gap: 30px;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .side-column {
+                order: 2;
+            }
+            .center-column {
+                order: 1;
+            }
+        }
+
+        /* البانر الإعلاني بالمنتصف */
+        .hero-banner {
+            background: #ffffff;
+            border: 1px solid #eae1d4;
+            border-radius: 4px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(184,154,108,0.03);
+        }
+
+        /* تصميم الموز والـ SOON الفني */
+        .illustration-box {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+        .banana-vector {
+            width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+            opacity: 0.85;
+        }
+        .soon-ribbon {
+            position: absolute;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--brand-dark);
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 40px;
+            border: 1px solid var(--gold-primary);
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .soon-ribbon i {
+            font-size: 14px;
+            color: var(--gold-primary);
+        }
+
+        .hero-banner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            color: var(--brand-dark);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        .hero-banner p {
+            font-size: 13px;
+            color: #7a7065;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        /* تصميم بطاقات المنتجات الجانبية */
+        .product-card { 
+            background: #ffffff;
+            border: 1px solid #eee6dc;
+            border-radius: 6px;
+            padding: 15px;
+            cursor: pointer; 
+            transition: 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(184,154,108,0.1);
+        }
+        
         .img-container {
-            width: 100%; height: 42vh; overflow: hidden; border-radius: 4px;
-            margin-bottom: 15px; background: var(--soft-bg);
+            width: 100%; height: 340px; overflow: hidden; border-radius: 4px;
+            margin-bottom: 15px; background: var(--bg-cream);
         }
         .img-container img { width: 100%; height: 100%; object-fit: cover; }
-        .product-meta { text-align: right; }
-        .product-meta h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 2px; }
-        .product-meta .desc { font-size: 13px; color: #888; margin-bottom: 8px; }
-        .product-meta .price { font-weight: 600; font-size: 16px; }
+        
+        .product-meta { text-align: right; padding: 5px 2px; }
+        .product-meta h3 { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; margin-bottom: 5px; color: var(--brand-dark); }
+        .product-meta .desc { font-size: 12px; color: #8a7e72; margin-bottom: 10px; }
+        .product-meta .price { font-weight: 600; font-size: 16px; color: var(--brand-dark); margin-bottom: 15px; }
 
-        /* --- خانات قريباً --- */
+        .card-btn {
+            display: block; width: 100%; background: var(--brand-dark); color: var(--gold-light);
+            text-align: center; padding: 12px; border-radius: 4px; font-size: 11px;
+            text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-weight: 600;
+        }
+
+        /* --- خانات قريباً المحدثة --- */
         .coming-soon-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
             margin-top: 20px;
-            margin-bottom: 100px;
+            clear: both;
         }
+        @media (max-width: 768px) {
+            .coming-soon-grid { grid-template-columns: 1fr; }
+        }
+        
         .soon-box {
-            background: #fffdf9;
-            border: 1px solid #f2e6d5;
-            border-radius: 8px;
-            height: 180px;
+            background: #ffffff;
+            border: 1px solid #ebdcc5;
+            border-radius: 6px;
+            height: 140px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
         }
-        .soon-box .q-mark {
-            font-size: 40px;
-            color: var(--gold-primary);
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .soon-box .q-mini {
+            width: 24px; height: 24px;
+            background: #fdfaf4; border: 1px solid var(--gold-primary);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 11px; color: var(--gold-primary); font-weight: bold; margin-bottom: 12px;
+        }
+        .soon-box .soon-title {
+            font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #bbb; margin-bottom: 4px;
         }
         .soon-box .soon-text {
-            color: var(--gold-primary);
-            font-size: 10px;
-            line-height: 1.4;
+            color: var(--brand-dark);
+            font-size: 13px;
+            font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
+            font-style: italic;
         }
 
         /* --- صفحة تفاصيل المنتج وسلايدر الصور --- */
@@ -132,60 +274,28 @@
         }
         #pdp-screen.active { transform: translateY(0); }
         
-        .pdp-header { padding: 45px 25px 15px; display: flex; justify-content: space-between; align-items: center; }
+        .pdp-header { padding: 45px 25px 15px; display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: auto; }
         
-        /* تصميم السلايدر المتطور */
         .slider-wrapper {
-            position: relative;
-            width: 100%;
-            padding: 0 20px;
-            overflow: hidden;
+            position: relative; width: 100%; max-width: 500px; margin: 0 auto; padding: 0 20px; overflow: hidden;
         }
         .pdp-slider { 
-            display: flex; 
-            width: 100%; 
-            overflow-x: auto; 
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
+            display: flex; width: 100%; overflow-x: auto; scroll-snap-type: x mandatory;
+            scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
         }
         .pdp-slider::-webkit-scrollbar { display: none; }
-        .pdp-slider img { 
-            width: 100%; 
-            flex-shrink: 0; 
-            scroll-snap-align: start; 
-            border-radius: 2px;
-            object-fit: cover;
-        }
+        .pdp-slider img { width: 100%; flex-shrink: 0; scroll-snap-align: start; border-radius: 4px; object-fit: cover; }
         
-        /* نقاط أسفل السلايدر */
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            margin-top: 10px;
-            margin-bottom: 15px;
-        }
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #eee;
-            transition: 0.3s;
-        }
-        .dot.active {
-            background: var(--gold-primary);
-            width: 18px;
-            border-radius: 4px;
-        }
+        .slider-dots { display: flex; justify-content: center; gap: 6px; margin-top: 12px; margin-bottom: 15px; }
+        .dot { width: 7px; height: 7px; border-radius: 50%; background: #eee; transition: 0.3s; }
+        .dot.active { background: var(--gold-primary); width: 16px; border-radius: 4px; }
         
-        .pdp-content { padding: 25px; text-align: right; }
+        .pdp-container { max-width: 500px; margin: auto; padding: 25px; text-align: right; }
         .pdp-title-row { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 5px; }
-        .pdp-title-row h1 { font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.3; }
-        .pdp-subtitle { font-size: 14px; color: #999; margin-bottom: 10px; }
-        .pdp-price { font-size: 20px; font-weight: 600; margin-bottom: 25px; }
+        .pdp-title-row h1 { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 400; }
+        .pdp-subtitle { font-size: 13px; color: #999; margin-bottom: 12px; }
+        .pdp-price { font-size: 22px; font-weight: 600; margin-bottom: 25px; color: var(--brand-dark); }
 
-        /* المقاسات */
         .section-label { font-size: 11px; color: #bbb; text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; }
         .size-selector { display: flex; flex-direction: row-reverse; gap: 10px; margin-bottom: 30px; }
         .size-box {
@@ -196,10 +306,10 @@
         .size-box.active { border-color: var(--brand-dark); background: var(--brand-dark); color: #fff; }
 
         .order-wa-button {
-            display: block; width: 100%; background: #120e0c; color: var(--gold-primary);
-            text-align: center; text-decoration: none; padding: 22px; border-radius: 50px;
-            font-weight: 600; font-size: 14px; letter-spacing: 2px; margin-bottom: 40px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: block; width: 100%; background: var(--brand-dark); color: var(--gold-light);
+            text-align: center; text-decoration: none; padding: 20px; border-radius: 50px;
+            font-weight: 600; font-size: 13px; letter-spacing: 2px; margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
         .payment-label { font-size: 10px; color: #ccc; text-transform: uppercase; margin-bottom: 15px; display: block; }
@@ -223,6 +333,11 @@
             display: flex; align-items: center; justify-content: center; font-size: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 4000; text-decoration: none;
         }
+        
+        footer {
+            text-align: center; padding: 30px; font-size: 10px; color: #bbb;
+            text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #eee; margin-top: 60px;
+        }
     </style>
 </head>
 <body>
@@ -240,48 +355,84 @@
     <button class="explore-btn" onclick="enterStore()">Explore Collection</button>
 </div>
 
-<header><div class="logo">NVANE</div></header>
+<header>
+    <div class="header-wrap">
+        <div class="logo">NVANE</div>
+        <svg class="deer-mini" viewBox="0 0 100 100">
+            <path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke-width="2"/>
+            <path d="M40 45 L60 45 L55 75 L45 75 Z" fill="none" stroke-width="2.5"/>
+        </svg>
+    </div>
+</header>
 
-<div class="feed-container">
-    <div class="product-card" onclick="openPDP('Butter Yellow Set', '46', ['https://a.top4top.io/p_37878wrd51.jpeg'], '🍦')">
-        <div class="img-container"><img src="https://a.top4top.io/p_37878wrd51.jpeg"></div>
-        <div class="product-meta">
-            <h3>🍦 Butter Yellow Set</h3>
-            <div class="desc">(نفنوف + بليزر)</div>
-            <div class="price">KD 46</div>
+<div class="main-layout">
+    
+    <div class="side-column">
+        <div class="product-card" onclick="openPDP('Butter Yellow Set', '46', ['https://a.top4top.io/p_37878wrd51.jpeg'], '🍦')">
+            <div class="img-container"><img src="https://a.top4top.io/p_37878wrd51.jpeg"></div>
+            <div class="product-meta">
+                <h3>Butter Yellow Set 🍦</h3>
+                <div class="desc">(نفنوف + بليزر)</div>
+                <div class="price">KD 46</div>
+                <span class="card-btn">Order Now</span>
+            </div>
         </div>
     </div>
 
-    <div class="product-card" onclick="openPDP('The perfect Eid set \'26 🪄💌', '55', ['https://a.top4top.io/p_37880lsll1.jpeg', 'https://b.top4top.io/p_3788uufhi2.jpeg', 'https://d.top4top.io/p_3788cu95j4.jpeg', 'https://c.top4top.io/p_37887ufev3.jpeg'], '')">
-        <div class="img-container"><img src="https://a.top4top.io/p_37880lsll1.jpeg"></div>
-        <div class="product-meta">
-            <h3>The perfect Eid set '26 🪄💌</h3>
-            <div class="desc">(Size upon request)</div>
-            <div class="price">KD 55</div>
+    <div class="center-column">
+        <div class="hero-banner">
+            <div class="illustration-box">
+                <svg class="banana-vector" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 180 C80 120, 120 70, 200 60 C280 50, 310 100, 350 140" stroke="#b89a6c" stroke-width="1" stroke-dasharray="4 4"/>
+                    <path d="M30 130 C90 70, 160 80, 220 120" stroke="#ebdcc5" stroke-width="1.5"/>
+                    <path d="M180 50 C240 80, 320 60, 370 110" stroke="#ebdcc5" stroke-width="1.5"/>
+                </svg>
+                <div class="soon-ribbon">
+                    <i class="fas fa-sparkles"></i> ✨ S O O N ✨ <i class="fas fa-sparkles"></i>
+                </div>
+            </div>
+            <h2>The New Collection</h2>
+            <p>Discover the essence of style: NVANE luxury blazers for women</p>
+        </div>
+
+        <div class="coming-soon-grid">
+            <div class="soon-box">
+                <div class="q-mini">?</div>
+                <div class="soon-title">Coming Soon</div>
+                <div class="soon-text">Discover more soon</div>
+            </div>
+            <div class="soon-box">
+                <div class="q-mini">?</div>
+                <div class="soon-title">Coming Soon</div>
+                <div class="soon-text">Unveiling new styles</div>
+            </div>
+            <div class="soon-box">
+                <div class="q-mini">?</div>
+                <div class="soon-title">Coming Soon</div>
+                <div class="soon-text">Deer to dream 🦌</div>
+            </div>
         </div>
     </div>
 
-    <div class="coming-soon-grid">
-        <div class="soon-box">
-            <div class="q-mark">?</div>
-            <div class="soon-text">سيتوفر الباقي قريباً بدعمكم 🦌</div>
-        </div>
-        <div class="soon-box">
-            <div class="q-mark">?</div>
-            <div class="soon-text">سيتوفر الباقي قريباً بدعمكم 🦌</div>
-        </div>
-        <div class="soon-box">
-            <div class="q-mark">?</div>
-            <div class="soon-text">سيتوفر الباقي قريباً بدعمكم 🦌</div>
+    <div class="side-column">
+        <div class="product-card" onclick="openPDP('The perfect Eid set \'26 🪄💌', '55', ['https://a.top4top.io/p_37880lsll1.jpeg', 'https://b.top4top.io/p_3788uufhi2.jpeg', 'https://d.top4top.io/p_3788cu95j4.jpeg', 'https://c.top4top.io/p_37887ufev3.jpeg'], '')">
+            <div class="img-container"><img src="https://a.top4top.io/p_37880lsll1.jpeg"></div>
+            <div class="product-meta">
+                <h3>The perfect Eid set '26 🪄💌</h3>
+                <div class="desc">(Size upon request)</div>
+                <div class="price">KD 55</div>
+                <span class="card-btn">Order Now</span>
+            </div>
         </div>
     </div>
+
 </div>
 
 <a href="https://wa.me/96564446249" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <div id="pdp-screen">
     <div class="pdp-header">
-        <i class="fas fa-chevron-right" onclick="closePDP()" style="font-size: 22px;"></i>
+        <i class="fas fa-chevron-right" onclick="closePDP()" style="font-size: 22px; cursor: pointer;"></i>
         <i class="fas fa-ellipsis-v" style="color: #ccc;"></i>
     </div>
 
@@ -290,7 +441,7 @@
         <div class="slider-dots" id="dots-container"></div>
     </div>
 
-    <div class="pdp-content">
+    <div class="pdp-container">
         <div class="pdp-title-row">
             <span id="p-emoji"></span>
             <h1 id="p-title">Product Name</h1>
@@ -338,6 +489,8 @@
     </div>
 </div>
 
+<footer>Design by BANANO</footer>
+
 <script>
     const PHONE = "96564446249";
     let currentP = "";
@@ -352,14 +505,12 @@
         document.getElementById('p-price').innerText = price;
         document.getElementById('p-emoji').innerText = emoji;
         
-        // تغيير النص الفرعي للمنتج الجديد ليتطابق مع (Size upon request)
         if(name.includes('Eid set')) {
             document.getElementById('p-sub').innerText = "(Size upon request)";
         } else {
             document.getElementById('p-sub').innerText = "(نفنوف + بليزر)";
         }
         
-        // بناء السلايدر والنقاط ديناميكياً
         const slider = document.getElementById('slider-container');
         const dotsContainer = document.getElementById('dots-container');
         slider.innerHTML = "";
