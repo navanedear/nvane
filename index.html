@@ -124,13 +124,13 @@
             display: flex; flex-direction: column; gap: 30px;
         }
 
-        /* --- البانر الإعلاني (الكرت) المعدل ليكون بالداخل وصغير --- */
+        /* --- البانر الإعلاني (الارتفاع والحجم بعد التكبير) --- */
         .hero-banner-wrapper { width: 100%; }
         .hero-banner {
             background: #ffffff; 
             border: 1px solid #eae1d4; 
             border-radius: 4px; 
-            padding: 40px 20px; 
+            padding: 45px 20px; 
             text-align: center; 
             box-shadow: 0 10px 30px rgba(184,154,108,0.03);
             display: flex;
@@ -139,33 +139,33 @@
             justify-content: center;
         }
         
-        /* الحاوية البيضاوية الفخمة وبداخلها النص صغير ومضبوط */
+        /* تكبير الكرت الداخلي بشكل متناسق وفخم */
         .badge-box {
             border: 1.5px solid var(--gold-primary);
             border-radius: 50px;
-            padding: 10px 30px;
+            padding: 14px 40px; /* زيادة مساحة البادينغ ليتوسع الكرت */
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            max-width: 90%;
+            gap: 18px;
+            margin-bottom: 18px;
+            max-width: 95%;
         }
         .badge-box h2 { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 16px; /* تصغير الخط شوي نفس ما طلبت */
+            font-size: 21px; /* تكبير خط نيو كلكشن */
             color: var(--gold-primary); 
             font-weight: 500; 
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             line-height: 1;
         }
         .badge-box .inner-sparkle {
             color: var(--gold-primary);
-            font-size: 10px;
+            font-size: 11px;
             opacity: 0.8;
         }
-        .hero-banner p { font-size: 12.5px; color: #7a7065; letter-spacing: 0.5px; line-height: 1.5; font-weight: 500; max-width: 320px; margin-top: 5px; }
+        .hero-banner p { font-size: 13px; color: #7a7065; letter-spacing: 0.5px; line-height: 1.5; font-weight: 500; max-width: 340px; margin-top: 5px; }
 
         /* حاوية المنتجات بالمنتصف */
         .products-wrapper { 
