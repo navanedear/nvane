@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* --- شاشة الترحيب الكبيرة والمحدثة --- */
+        /* --- شاشة الترحيب (رجعت لحجمها الطبيعي الناعم مالت أول) --- */
         #landing-screen {
             height: 100vh; width: 100%;
             background-color: var(--brand-dark);
@@ -36,35 +36,34 @@
         }
         
         .deer-svg {
-            width: 100px; height: 100px; fill: none; stroke: var(--gold-primary); stroke-width: 1.5; margin-bottom: 15px;
+            width: 80px; height: 80px; fill: none; stroke: var(--gold-primary); stroke-width: 1.5; margin-bottom: 5px;
         }
 
-        /* تكبير شعار شاشة البدء */
+        /* الحجم الطبيعي الأنيق لشعار البداية */
         #landing-screen .logo-big { 
-            font-family: 'Cormorant Garamond', serif; color: var(--gold-primary); font-size: 75px; letter-spacing: 20px; text-transform: uppercase; margin-left: -20px; font-weight: 600;
+            font-family: 'Cormorant Garamond', serif; color: var(--gold-primary); font-size: 55px; letter-spacing: 15px; text-transform: uppercase; margin-left: -15px;
         }
 
         .blazers-subtext {
-            color: var(--gold-primary); font-family: 'Cormorant Garamond', serif; font-size: 24px; letter-spacing: 12px; text-transform: uppercase; margin-top: 10px;
+            color: var(--gold-primary); font-family: 'Cormorant Garamond', serif; font-size: 20px; letter-spacing: 10px; text-transform: uppercase; margin-top: 5px;
         }
 
         .explore-btn { 
-            background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 18px 60px; font-size: 12px; text-transform: uppercase; letter-spacing: 4px; cursor: pointer; margin-top: 60px; transition: 0.3s;
+            background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 15px 50px; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; margin-top: 60px;
         }
-        .explore-btn:hover { background: var(--gold-primary); color: var(--brand-dark); }
 
-        /* --- الهيدر الفخم مع الشعار المكبّر --- */
+        /* --- الهيدر الفخم (هنا تم تكبير الشعار بشكل واضح عند اختيار المنتجات) --- */
         header { 
-            background-color: var(--brand-dark); padding: 25px 40px; display: flex; justify-content: center; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background-color: var(--brand-dark); padding: 30px 40px; display: flex; justify-content: center; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         header .header-wrap {
             width: 100%; max-width: 1200px; display: flex; justify-content: space-between; align-items: center;
         }
-        /* تكبير حجم الشعار الأساسي في الموقع */
+        /* تكبير حجم الشعار الأساسي فوق المنتجات لتأثير أقوى وأفخم */
         header .logo { 
-            font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: var(--gold-light); letter-spacing: 12px; text-transform: uppercase; margin: auto; transform: translateX(15px);
+            font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 700; color: var(--gold-light); letter-spacing: 14px; text-transform: uppercase; margin: auto; transform: translateX(15px);
         }
-        header .deer-mini { width: 30px; height: 30px; fill: none; stroke: var(--gold-primary); stroke-width: 1.5; }
+        header .deer-mini { width: 32px; height: 32px; fill: none; stroke: var(--gold-primary); stroke-width: 1.5; }
 
         /* --- التوزيع الثلاثي للموقع (المنتجات فوق أول شيء) --- */
         .main-layout {
