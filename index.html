@@ -51,17 +51,18 @@
             background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 14px 45px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; margin-top: 55px;
         }
 
-        /* --- الهيدر الثابت مع تصغير الحجم بالكامل --- */
+        /* --- الهيدر (ثابت فوق بالقمة ولا ينزل مع السكرول + حجم صغير حيل) --- */
         header { 
             background-color: var(--brand-dark); 
-            padding: 20px 20px 18px; /* تقليل المسافات العلوية والسفلية ليصبح الهيدر أنحف */
+            padding: 14px 20px 12px; /* أنحف وأصغر */
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            position: sticky; 
+            position: absolute; /* الحين صار ثابت فوق بالصفحة وما يلحقك إذا نزلت تحت */
             top: 0; 
+            left: 0;
+            width: 100%;
             z-index: 1000; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         .header-wrap {
             display: flex;
@@ -69,18 +70,18 @@
             align-items: center;
             text-align: center;
             width: 100%;
-            max-width: 240px; /* تصغير عرض الحاوية بالكامل */
+            max-width: 180px; /* تصغير عرض الحاوية بالكامل حيل */
         }
         .header-wrap .logo { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 38px; /* تصغير حجم اللوجو بشكل ملحوظ وناعم */
+            font-size: 26px; /* تصغير حجم اللوجو حيل ليصبح ناعم جداً */
             font-weight: 300; 
             color: var(--gold-light); 
-            letter-spacing: 6px; 
+            letter-spacing: 5px; 
             text-transform: uppercase;
             line-height: 0.9;
-            margin-bottom: 8px;
-            margin-left: -6px; 
+            margin-bottom: 5px;
+            margin-left: -5px; 
         }
         .logo-divider {
             display: flex;
@@ -88,7 +89,7 @@
             justify-content: center;
             width: 100%;
             position: relative;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
         .logo-divider::before {
             content: "";
@@ -97,30 +98,30 @@
             right: 0;
             top: 50%;
             height: 0.5px;
-            background-color: rgba(235, 220, 197, 0.35);
+            background-color: rgba(235, 220, 197, 0.25);
         }
         .logo-divider .sparkle {
             color: var(--gold-light);
-            font-size: 9px; /* تصغير النجمة */
+            font-size: 7px; /* نجمة صغيرة وناعمة */
             background-color: var(--brand-dark);
-            padding: 0 8px;
+            padding: 0 6px;
             position: relative;
             z-index: 2;
             line-height: 1;
         }
         .header-wrap .sub-logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 7.5px; /* تصغير النص السفلي ليتناسق مع الحجم الجديد */
+            font-size: 6px; /* كتابة سفلية دقيقة وراقية */
             font-weight: 400;
-            color: rgba(235, 220, 197, 0.6);
-            letter-spacing: 4px;
+            color: rgba(235, 220, 197, 0.5);
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-left: -4px;
+            margin-left: -3px;
         }
 
-        /* --- حاوية الهيكل العام للموقع --- */
+        /* --- حاوية الهيكل العام للموقع (إضافة مسافة علوية عشان الهيدر المطلق) --- */
         .main-layout {
-            max-width: 1400px; margin: 40px auto; padding: 0 25px;
+            max-width: 1400px; margin: 90px auto 40px; padding: 0 25px;
             display: flex; flex-direction: column; gap: 30px;
         }
 
