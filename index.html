@@ -124,7 +124,7 @@
             font-weight: 600;
         }
 
-        /* --- صفحة تفاصيل المنتج --- */
+        /* --- صفحة تفاصيل المنتج وسلايدر الصور --- */
         #pdp-screen {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
             background: #fff; z-index: 6000; overflow-y: auto;
@@ -133,12 +133,55 @@
         #pdp-screen.active { transform: translateY(0); }
         
         .pdp-header { padding: 45px 25px 15px; display: flex; justify-content: space-between; align-items: center; }
-        .pdp-img-box { width: 100%; padding: 0 20px; }
-        .pdp-img-box img { width: 100%; border-radius: 2px; }
+        
+        /* تصميم السلايدر المتطور */
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+        .pdp-slider { 
+            display: flex; 
+            width: 100%; 
+            overflow-x: auto; 
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        .pdp-slider::-webkit-scrollbar { display: none; }
+        .pdp-slider img { 
+            width: 100%; 
+            flex-shrink: 0; 
+            scroll-snap-align: start; 
+            border-radius: 2px;
+            object-fit: cover;
+        }
+        
+        /* نقاط أسفل السلايدر */
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #eee;
+            transition: 0.3s;
+        }
+        .dot.active {
+            background: var(--gold-primary);
+            width: 18px;
+            border-radius: 4px;
+        }
         
         .pdp-content { padding: 25px; text-align: right; }
         .pdp-title-row { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 5px; }
-        .pdp-title-row h1 { font-family: 'Cormorant Garamond', serif; font-size: 26px; }
+        .pdp-title-row h1 { font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.3; }
         .pdp-subtitle { font-size: 14px; color: #999; margin-bottom: 10px; }
         .pdp-price { font-size: 20px; font-weight: 600; margin-bottom: 25px; }
 
@@ -200,7 +243,7 @@
 <header><div class="logo">NVANE</div></header>
 
 <div class="feed-container">
-    <div class="product-card" onclick="openPDP('Butter Yellow Set', '46', 'https://a.top4top.io/p_37878wrd51.jpeg')">
+    <div class="product-card" onclick="openPDP('Butter Yellow Set', '46', ['https://a.top4top.io/p_37878wrd51.jpeg'], '🍦')">
         <div class="img-container"><img src="https://a.top4top.io/p_37878wrd51.jpeg"></div>
         <div class="product-meta">
             <h3>🍦 Butter Yellow Set</h3>
@@ -209,11 +252,16 @@
         </div>
     </div>
 
-    <div class="coming-soon-grid">
-        <div class="soon-box">
-            <div class="q-mark">?</div>
-            <div class="soon-text">سيتوفر الباقي قريباً بدعمكم 🦌</div>
+    <div class="product-card" onclick="openPDP('The perfect Eid set \'26 🪄💌', '55', ['https://a.top4top.io/p_37880lsll1.jpeg', 'https://b.top4top.io/p_3788uufhi2.jpeg', 'https://d.top4top.io/p_3788cu95j4.jpeg', 'https://c.top4top.io/p_37887ufev3.jpeg'], '')">
+        <div class="img-container"><img src="https://a.top4top.io/p_37880lsll1.jpeg"></div>
+        <div class="product-meta">
+            <h3>The perfect Eid set '26 🪄💌</h3>
+            <div class="desc">(Size upon request)</div>
+            <div class="price">KD 55</div>
         </div>
+    </div>
+
+    <div class="coming-soon-grid">
         <div class="soon-box">
             <div class="q-mark">?</div>
             <div class="soon-text">سيتوفر الباقي قريباً بدعمكم 🦌</div>
@@ -237,14 +285,17 @@
         <i class="fas fa-ellipsis-v" style="color: #ccc;"></i>
     </div>
 
-    <div class="pdp-img-box"><img id="p-img" src=""></div>
+    <div class="slider-wrapper">
+        <div class="pdp-slider" id="slider-container" onscroll="updateDots()"></div>
+        <div class="slider-dots" id="dots-container"></div>
+    </div>
 
     <div class="pdp-content">
         <div class="pdp-title-row">
-            <span id="p-emoji">🍦</span>
+            <span id="p-emoji"></span>
             <h1 id="p-title">Product Name</h1>
         </div>
-        <div class="pdp-subtitle">(نفنوف + بليزر)</div>
+        <div class="pdp-subtitle" id="p-sub">(نفنوف + بليزر)</div>
         <div class="pdp-price">KD <span id="p-price">0</span></div>
 
         <span class="section-label">Size / المقاس</span>
@@ -295,16 +346,55 @@
 
     function enterStore() { document.getElementById('landing-screen').style.transform = 'translateY(-100%)'; }
     
-    function openPDP(name, price, img) {
+    function openPDP(name, price, imgArray, emoji) {
         currentP = name;
         document.getElementById('p-title').innerText = name;
         document.getElementById('p-price').innerText = price;
-        document.getElementById('p-img').src = img;
+        document.getElementById('p-emoji').innerText = emoji;
+        
+        // تغيير النص الفرعي للمنتج الجديد ليتطابق مع (Size upon request)
+        if(name.includes('Eid set')) {
+            document.getElementById('p-sub').innerText = "(Size upon request)";
+        } else {
+            document.getElementById('p-sub').innerText = "(نفنوف + بليزر)";
+        }
+        
+        // بناء السلايدر والنقاط ديناميكياً
+        const slider = document.getElementById('slider-container');
+        const dotsContainer = document.getElementById('dots-container');
+        slider.innerHTML = "";
+        dotsContainer.innerHTML = "";
+        
+        imgArray.forEach((imgUrl, index) => {
+            const img = document.createElement('img');
+            img.src = imgUrl;
+            slider.appendChild(img);
+            
+            const dot = document.createElement('div');
+            dot.className = `dot ${index === 0 ? 'active' : ''}`;
+            dotsContainer.appendChild(dot);
+        });
+
         document.getElementById('pdp-screen').style.display = 'block';
         setTimeout(() => {
             document.getElementById('pdp-screen').classList.add('active');
+            slider.scrollLeft = 0;
             updateLink();
         }, 10);
+    }
+
+    function updateDots() {
+        const slider = document.getElementById('slider-container');
+        const dots = document.querySelectorAll('.dot');
+        if(dots.length === 0) return;
+        
+        const index = Math.round(slider.scrollLeft / slider.clientWidth);
+        const activeIndex = Math.abs(index); 
+        
+        dots.forEach((dot, i) => {
+            if(i === activeIndex && dot) dot.classList.add('active');
+            else if(dot) dot.classList.remove('active');
+        });
     }
 
     function closePDP() {
