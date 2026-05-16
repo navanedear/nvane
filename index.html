@@ -25,7 +25,7 @@
             overflow-x: hidden;
         }
 
-        /* --- شاشة الدخول --- */
+        /* --- Ø´Ø§Ø´Ø© Ø§ÙØªØ±Ø­ÙØ¨ --- */
         #landing-screen {
             height: 100vh; width: 100%;
             background-color: var(--brand-dark);
@@ -67,7 +67,7 @@
             cursor: pointer; margin-top: 60px;
         }
 
-        /* --- الهيدر --- */
+        /* --- Ø§ÙÙÙØ¯Ø± --- */
         header { 
             background-color: var(--brand-dark); padding: 20px 0; 
             text-align: center; position: sticky; top: 0; z-index: 1000;
@@ -77,115 +77,108 @@
             color: var(--gold-primary); letter-spacing: 6px; text-transform: uppercase; 
         }
 
-        /* --- المنتجات --- */
-        .feed-container { padding: 20px; max-width: 600px; margin: auto; }
-        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        
-        .product-card { cursor: pointer; margin-bottom: 20px; }
+        /* --- Ø¹Ø±Ø¶ Ø§ÙÙÙØªØ¬Ø§Øª --- */
+        .feed-container { padding: 25px; max-width: 500px; margin: auto; }
+        .product-card { cursor: pointer; margin-bottom: 40px; }
         .img-container {
-            width: 100%; aspect-ratio: 3/4; overflow: hidden; border-radius: 12px;
-            margin-bottom: 10px; background: var(--soft-bg);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            display: flex; align-items: center; justify-content: center;
-            position: relative;
+            width: 100%; height: 42vh; overflow: hidden; border-radius: 4px;
+            margin-bottom: 15px; background: var(--soft-bg);
         }
-        
-        /* --- Slider Specific Styles --- */
-        .slider-wrapper {
+        .img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .product-meta { text-align: right; }
+        .product-meta h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 2px; }
+        .product-meta .desc { font-size: 13px; color: #888; margin-bottom: 8px; }
+        .product-meta .price { font-weight: 600; font-size: 16px; }
+
+        /* --- Ø®Ø§ÙØ§Øª ÙØ±ÙØ¨Ø§Ù --- */
+        .coming-soon-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+        .soon-box {
+            background: #fffdf9;
+            border: 1px solid #f2e6d5;
+            border-radius: 8px;
+            height: 180px;
             display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease-in-out;
-            /* سيتم التحكم بـ transform عبر JS */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
         }
-        .slider-wrapper img {
-            min-width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .slider-dots {
-            position: absolute;
-            bottom: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 5px;
-            z-index: 2;
-        }
-        .dot {
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            transition: 0.3s;
-        }
-        .dot.active {
-            background: #fff;
-            width: 12px;
-            border-radius: 10px;
-        }
-        
-        .q-mark { 
-            font-size: 50px; 
-            color: var(--gold-primary); 
+        .soon-box .q-mark {
+            font-size: 40px;
+            color: var(--gold-primary);
             font-family: 'Cormorant Garamond', serif;
             font-weight: bold;
+            margin-bottom: 10px;
         }
-        .coming-soon-overlay {
-            position: absolute; bottom: 10px; width: 90%; text-align: center;
-            font-size: 9px; color: #888; line-height: 1.3; font-weight: 600;
+        .soon-box .soon-text {
+            color: var(--gold-primary);
+            font-size: 10px;
+            line-height: 1.4;
+            font-weight: 600;
         }
 
-        .product-meta { text-align: right; padding: 0 5px; }
-        .product-meta h3 { font-family: 'Cormorant Garamond', serif; font-size: 16px; margin-bottom: 2px; }
-        .product-meta .price { font-weight: 600; font-size: 14px; color: var(--brand-dark); }
-
-        /* --- صفحة المنتج --- */
+        /* --- ØµÙØ­Ø© ØªÙØ§ØµÙÙ Ø§ÙÙÙØªØ¬ --- */
         #pdp-screen {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
             background: #fff; z-index: 6000; overflow-y: auto;
-            transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform: translateY(100%); transition: transform 0.5s ease;
         }
         #pdp-screen.active { transform: translateY(0); }
         
-        .pdp-header { padding: 45px 20px 10px; display: flex; justify-content: flex-start; }
+        .pdp-header { padding: 45px 25px 15px; display: flex; justify-content: space-between; align-items: center; }
         .pdp-img-box { width: 100%; padding: 0 20px; }
-        .pdp-img-box img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .pdp-img-box img { width: 100%; border-radius: 2px; }
         
         .pdp-content { padding: 25px; text-align: right; }
-        .pdp-price { font-size: 24px; font-weight: 600; margin-bottom: 30px; }
+        .pdp-title-row { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 5px; }
+        .pdp-title-row h1 { font-family: 'Cormorant Garamond', serif; font-size: 26px; }
+        .pdp-subtitle { font-size: 14px; color: #999; margin-bottom: 10px; }
+        .pdp-price { font-size: 20px; font-weight: 600; margin-bottom: 25px; }
 
-        .section-label { font-size: 11px; color: #aaa; text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; font-weight: bold; }
-        
-        .size-selector { display: flex; flex-direction: row-reverse; gap: 8px; margin-bottom: 30px; }
+        /* Ø§ÙÙÙØ§Ø³Ø§Øª */
+        .section-label { font-size: 11px; color: #bbb; text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; }
+        .size-selector { display: flex; flex-direction: row-reverse; gap: 10px; margin-bottom: 30px; }
         .size-box {
-            flex: 1; height: 50px; border: 1.5px solid #eee; border-radius: 10px;
+            width: 50px; height: 50px; border: 1.5px solid #eee; border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
             font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s;
         }
         .size-box.active { border-color: var(--brand-dark); background: var(--brand-dark); color: #fff; }
 
+        .order-wa-button {
+            display: block; width: 100%; background: #120e0c; color: var(--gold-primary);
+            text-align: center; text-decoration: none; padding: 22px; border-radius: 50px;
+            font-weight: 600; font-size: 14px; letter-spacing: 2px; margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .payment-label { font-size: 10px; color: #ccc; text-transform: uppercase; margin-bottom: 15px; display: block; }
         .pay-option {
             display: flex; align-items: center; justify-content: space-between;
-            padding: 18px; border: 1.5px solid #f5f5f5; border-radius: 12px;
-            margin-bottom: 10px; cursor: pointer; background: #fafafa;
+            padding: 18px; border: 1.5px solid #eee; border-radius: 15px;
+            margin-bottom: 12px; cursor: pointer; transition: 0.2s;
         }
         .pay-option.active { border-color: var(--brand-dark); background: #fff; }
-        .check-icon { width: 20px; height: 20px; border: 1.5px solid #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .pay-option.active .check-icon { background: #2ecc71; border-color: #2ecc71; color: white; }
-
-        .order-wa-button {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            width: 100%; background: var(--brand-dark); color: var(--gold-primary);
-            text-align: center; text-decoration: none; padding: 22px; border-radius: 15px;
-            font-weight: 600; font-size: 15px; letter-spacing: 1px; margin-top: 20px; margin-bottom: 50px;
+        .pay-option .check-icon { 
+            width: 22px; height: 22px; border: 1.5px solid #eee; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 12px; color: transparent;
         }
+        .pay-option.active .check-icon { background: #2ecc71; border-color: #2ecc71; color: white; }
+        .pay-info { display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 15px; }
+        .pay-info i { font-size: 20px; }
 
         .wa-float {
             position: fixed; bottom: 30px; right: 25px; width: 60px; height: 60px;
             background: var(--whatsapp-green); color: white; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; font-size: 30px;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); z-index: 4000; text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 4000; text-decoration: none;
         }
     </style>
 </head>
@@ -196,49 +189,43 @@
         <path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke-width="2"/>
         <path d="M40 45 L60 45 L55 75 L45 75 Z" fill="none" stroke-width="2.5"/>
         <path d="M48 55 A2 2 0 1 1 52 55 A2 2 0 1 1 48 55" fill="var(--gold-primary)"/>
+        <path d="M42 45 C35 35 30 40 30 45" stroke-width="1.5"/>
+        <path d="M58 45 C65 35 70 40 70 45" stroke-width="1.5"/>
     </svg>
     <div class="logo-big">NVANE</div>
     <div class="blazers-subtext">Blazers</div>
-    <button class="explore-btn" onclick="enterStore()">إكتشف المجموعة</button>
+    <button class="explore-btn" onclick="enterStore()">Explore Collection</button>
 </div>
 
 <header><div class="logo">NVANE</div></header>
 
 <div class="feed-container">
-    <div class="grid-layout">
-        <!-- Butter Yellow Product WITH SLIDER -->
-        <div class="product-card" onclick="handleCardClick(event, 'Butter Yellow Set', '46')">
-            <div class="img-container">
-                <div class="slider-wrapper" id="main-slider">
-                    <!-- الصور الثلاث بالترتيب -->
-                    <img src="https://a.top4top.io/p_37878wrd51.jpeg" alt="Angle 1">
-                    <img src="https://a.top4top.io/p_31191jptk1.jpg" alt="Angle 2">
-                    <img src="https://e.top4top.io/p_31191jptk1.jpg" alt="Angle 3">
-                </div>
-                <div class="slider-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-            </div>
-            <div class="product-meta">
-                <h3>🍦 Butter Yellow</h3>
-                <div class="price">KD 46</div>
-            </div>
+    <div class="product-card" onclick="openPDP('Butter Yellow Set', '46', 'https://a.top4top.io/p_37878wrd51.jpeg')">
+        <div class="img-container"><img src="https://a.top4top.io/p_37878wrd51.jpeg"></div>
+        <div class="product-meta">
+            <h3>ð¦ Butter Yellow Set</h3>
+            <div class="desc">(ÙÙÙÙÙ + Ø¨ÙÙØ²Ø±)</div>
+            <div class="price">KD 46</div>
         </div>
+    </div>
 
-        <!-- Coming Soon Grid -->
-        <div class="product-card">
-            <div class="img-container"><div class="q-mark">؟</div><div class="coming-soon-overlay">قريباً..</div></div>
-            <div class="product-meta"><h3>Coming Soon</h3><div class="price">--</div></div>
+    <!-- Ø®Ø§ÙØ§Øª Ø§Ø³ØªÙÙØ§Ù Ø°ÙØ¨ÙØ© -->
+    <div class="coming-soon-grid">
+        <div class="soon-box">
+            <div class="q-mark">?</div>
+            <div class="soon-text">Ø³ÙØªÙÙØ± Ø§ÙØ¨Ø§ÙÙ ÙØ±ÙØ¨Ø§Ù Ø¨Ø¯Ø¹ÙÙ ð¦</div>
         </div>
-        <div class="product-card">
-            <div class="img-container"><div class="q-mark">؟</div><div class="coming-soon-overlay">قريباً..</div></div>
-            <div class="product-meta"><h3>Coming Soon</h3><div class="price">--</div></div>
+        <div class="soon-box">
+            <div class="q-mark">?</div>
+            <div class="soon-text">Ø³ÙØªÙÙØ± Ø§ÙØ¨Ø§ÙÙ ÙØ±ÙØ¨Ø§Ù Ø¨Ø¯Ø¹ÙÙ ð¦</div>
         </div>
-        <div class="product-card">
-            <div class="img-container"><div class="q-mark">؟</div><div class="coming-soon-overlay">قريباً..</div></div>
-            <div class="product-meta"><h3>Coming Soon</h3><div class="price">--</div></div>
+        <div class="soon-box">
+            <div class="q-mark">?</div>
+            <div class="soon-text">Ø³ÙØªÙÙØ± Ø§ÙØ¨Ø§ÙÙ ÙØ±ÙØ¨Ø§Ù Ø¨Ø¯Ø¹ÙÙ ð¦</div>
+        </div>
+        <div class="soon-box">
+            <div class="q-mark">?</div>
+            <div class="soon-text">Ø³ÙØªÙÙØ± Ø§ÙØ¨Ø§ÙÙ ÙØ±ÙØ¨Ø§Ù Ø¨Ø¯Ø¹ÙÙ ð¦</div>
         </div>
     </div>
 </div>
@@ -247,14 +234,22 @@
 
 <div id="pdp-screen">
     <div class="pdp-header">
-        <i class="fas fa-arrow-right" onclick="closePDP()" style="font-size: 24px; cursor: pointer; padding: 10px;"></i>
+        <i class="fas fa-chevron-right" onclick="closePDP()" style="font-size: 22px;"></i>
+        <i class="fas fa-ellipsis-v" style="color: #ccc;"></i>
     </div>
+
     <div class="pdp-img-box"><img id="p-img" src=""></div>
+
     <div class="pdp-content">
-        <h1 id="p-title" style="font-family: 'Cormorant Garamond', serif; font-size: 30px; margin-bottom: 5px;">المنتج</h1>
+        <div class="pdp-title-row">
+            <span id="p-emoji">ð¦</span>
+            <h1 id="p-title">Product Name</h1>
+        </div>
+        <div class="pdp-subtitle">(ÙÙÙÙÙ + Ø¨ÙÙØ²Ø±)</div>
         <div class="pdp-price">KD <span id="p-price">0</span></div>
 
-        <span class="section-label">اختر المقاس / Size</span>
+        <!-- Ø§Ø®ØªÙØ§Ø± Ø§ÙÙÙØ§Ø³ -->
+        <span class="section-label">Size / Ø§ÙÙÙØ§Ø³</span>
         <div class="size-selector">
             <div class="size-box" onclick="setSize('XL', this)">XL</div>
             <div class="size-box" onclick="setSize('L', this)">L</div>
@@ -262,100 +257,83 @@
             <div class="size-box" onclick="setSize('S', this)">S</div>
         </div>
 
-        <span class="section-label">طريقة الدفع / Payment</span>
-        <div id="payment-options">
-            <div class="pay-option active" onclick="setPay('ومض ⚡', this)">
-                <div class="check-icon"><i class="fas fa-check"></i></div>
-                <div style="font-weight: 600; font-size: 15px;">ومض (Wompi) ⚡</div>
-            </div>
-            <div class="pay-option" onclick="setPay('لينك 🔗', this)">
-                <div class="check-icon"><i class="fas fa-check"></i></div>
-                <div style="font-weight: 600; font-size: 15px;">رابط دفع (Link) 🔗</div>
-            </div>
-            <div class="pay-option" onclick="setPay('عند الاستلام 💵', this)">
-                <div class="check-icon"><i class="fas fa-check"></i></div>
-                <div style="font-weight: 600; font-size: 15px;">دفع عند الاستلام 💵</div>
+        <a id="wa-final-link" href="#" class="order-wa-button" target="_blank">
+            ORDER VIA WHATSAPP
+        </a>
+
+        <span class="payment-label">PAYMENT / Ø·Ø±ÙÙØ© Ø§ÙØ¯ÙØ¹</span>
+        
+        <div class="pay-option active" onclick="setPay('ÙÙØ¶ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨ â¡', this)">
+            <div class="check-icon"><i class="fas fa-check"></i></div>
+            <div class="pay-info">
+                <span>ÙÙØ¶ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨</span>
+                <i class="fas fa-bolt" style="color: #f1c40f;"></i>
             </div>
         </div>
 
-        <a id="wa-final-link" href="#" class="order-wa-button" target="_blank">
-            <span>إرسال الطلب عبر واتساب</span>
-            <i class="fab fa-whatsapp" style="font-size: 20px;"></i>
-        </a>
+        <div class="pay-option" onclick="setPay('ÙÙÙÙ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨ ð', this)">
+            <div class="check-icon"><i class="fas fa-check"></i></div>
+            <div class="pay-info">
+                <span>ÙÙÙÙ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨</span>
+                <i class="fas fa-link" style="color: #333;"></i>
+            </div>
+        </div>
+
+        <div class="pay-option" onclick="setPay('Ø§ÙØ¯ÙØ¹ Ø¹ÙØ¯ Ø§ÙØ§Ø³ØªÙØ§Ù (ÙØ§Ø´) ðµ', this)">
+            <div class="check-icon"><i class="fas fa-check"></i></div>
+            <div class="pay-info">
+                <span>Ø§ÙØ¯ÙØ¹ Ø¹ÙØ¯ Ø§ÙØ§Ø³ØªÙØ§Ù (ÙØ§Ø´)</span>
+                <i class="fas fa-money-bill-wave" style="color: #2ecc71;"></i>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
     const PHONE = "96564446249";
-    let currentP = ""; let currentPay = "ومض ⚡"; let currentSize = "M";
-    
-    // Slider Logic
-    let currentSlide = 0;
-    const totalSlides = 3;
-    const sliderWrapper = document.getElementById('main-slider');
-    const dots = document.querySelectorAll('.dot');
-
-    // وظيفة تبديل السلايدر
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSliderUI();
-    }
-
-    function updateSliderUI() {
-        // تحريك الصور (RTL)
-        sliderWrapper.style.transform = `translateX(${currentSlide * 100}%)`;
-        
-        // تحديث النقاط
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
-        });
-    }
-
-    // تشغيل السلايدر تلقائياً كل 3 ثواني
-    setInterval(nextSlide, 3000);
+    let currentP = "";
+    let currentPay = "ÙÙØ¶ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨ â¡";
+    let currentSize = "M";
 
     function enterStore() { document.getElementById('landing-screen').style.transform = 'translateY(-100%)'; }
     
-    // التعامل مع الضغطة على كرت المنتج
-    function handleCardClick(event, name, price) {
-        // نفتح صفحة المنتج بناءً على الصورة الحالية في السلايدر
-        const currentImgSrc = sliderWrapper.querySelectorAll('img')[currentSlide].src;
-        openPDP(name, price, currentImgSrc);
-    }
-
     function openPDP(name, price, img) {
         currentP = name;
         document.getElementById('p-title').innerText = name;
         document.getElementById('p-price').innerText = price;
         document.getElementById('p-img').src = img;
         document.getElementById('pdp-screen').style.display = 'block';
-        setTimeout(() => { document.getElementById('pdp-screen').classList.add('active'); updateLink(); }, 50);
+        setTimeout(() => {
+            document.getElementById('pdp-screen').classList.add('active');
+            updateLink();
+        }, 10);
     }
 
-    function closePDP() { 
-        document.getElementById('pdp-screen').classList.remove('active'); 
-        setTimeout(() => document.getElementById('pdp-screen').style.display = 'none', 400); 
+    function closePDP() {
+        document.getElementById('pdp-screen').classList.remove('active');
+        setTimeout(() => document.getElementById('pdp-screen').style.display = 'none', 500);
     }
 
-    function setSize(val, el) { 
-        currentSize = val; 
-        document.querySelectorAll('.size-box').forEach(b => b.classList.remove('active')); 
-        el.classList.add('active'); 
-        updateLink(); 
+    function setSize(val, el) {
+        currentSize = val;
+        document.querySelectorAll('.size-box').forEach(b => b.classList.remove('active'));
+        el.classList.add('active');
+        updateLink();
     }
 
-    function setPay(val, el) { 
-        currentPay = val; 
-        document.querySelectorAll('.pay-option').forEach(o => o.classList.remove('active')); 
-        el.classList.add('active'); 
-        updateLink(); 
+    function setPay(val, el) {
+        currentPay = val;
+        document.querySelectorAll('.pay-option').forEach(opt => opt.classList.remove('active'));
+        el.classList.add('active');
+        updateLink();
     }
 
     function updateLink() {
-        const msg = `مرحباً NVANE ✨\nأود طلب: ${currentP}\nالمقاس: ${currentSize}\nطريقة الدفع: ${currentPay}`;
+        const msg = `ÙØ±Ø­Ø¨Ø§Ù NVANE â¨\n\nØ£ÙØ¯ Ø·ÙØ¨ Ø§ÙÙÙØªØ¬ Ø§ÙØªØ§ÙÙ ð¦:\nð§¥ Ø§ÙÙÙØªØ¬: ${currentP}\nð Ø§ÙÙÙØ§Ø³: ${currentSize}\nð³ Ø·Ø±ÙÙØ© Ø§ÙØ¯ÙØ¹: ${currentPay}\n\nØ´ÙØ±Ø§Ù ÙÙÙ ð¤`;
         document.getElementById('wa-final-link').href = `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
     }
 </script>
+
 </body>
 </html>
 
