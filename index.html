@@ -2,171 +2,354 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NVANE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>NVANE | Luxury Blazers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #120e0c; 
+            --gold-primary: #d4bc8e;
+            --whatsapp-green: #25D366;
+            --soft-bg: #f9f9f9;
+        }
 
-<style>
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: var(--brand-dark);
+            overflow-x: hidden;
+        }
 
-body{
-    margin:0;
-    font-family: Arial;
-    background:#fff;
-}
+        /* --- شاشة الدخول --- */
+        #landing-screen {
+            height: 100vh; width: 100%;
+            background-color: var(--brand-dark);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            position: fixed; top: 0; left: 0; z-index: 5000;
+            transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        
+        .deer-svg {
+            width: 80px; height: 80px;
+            fill: none; stroke: var(--gold-primary);
+            stroke-width: 1.5; stroke-linecap: round;
+            margin-bottom: 5px;
+        }
 
-/* المنتج */
-.product-card{
-    width:100%;
-    max-width:400px;
-    margin:20px auto;
-    cursor:pointer;
-}
+        #landing-screen .logo-big { 
+            font-family: 'Cormorant Garamond', serif; 
+            color: var(--gold-primary); 
+            font-size: 55px; 
+            letter-spacing: 15px; 
+            text-transform: uppercase; 
+            line-height: 1.2;
+            margin-left: -15px;
+        }
 
-.img-container img{
-    width:100%;
-    border-radius:15px;
-}
+        .blazers-subtext {
+            color: var(--gold-primary);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
 
-/* PDP */
-#pdp{
-    position:fixed;
-    inset:0;
-    background:#fff;
-    display:none;
-    flex-direction:column;
-    z-index:9999;
-}
+        .explore-btn { 
+            background: none; border: 1px solid var(--gold-primary); 
+            color: var(--gold-primary); padding: 15px 50px; 
+            font-size: 11px; text-transform: uppercase; letter-spacing: 3px; 
+            cursor: pointer; margin-top: 60px;
+        }
 
-#pdp.active{display:flex;}
+        /* --- الهيدر --- */
+        header { 
+            background-color: var(--brand-dark); padding: 20px 0; 
+            text-align: center; position: sticky; top: 0; z-index: 1000;
+        }
+        header .logo { 
+            font-family: 'Cormorant Garamond', serif; font-size: 22px; 
+            color: var(--gold-primary); letter-spacing: 6px; text-transform: uppercase; 
+        }
 
-/* السلايدر */
-.slider{
-    position:relative;
-    overflow:hidden;
-}
+        /* --- المنتجات --- */
+        .feed-container { padding: 20px; max-width: 600px; margin: auto; }
+        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        
+        .product-card { cursor: pointer; margin-bottom: 20px; }
+        .img-container {
+            width: 100%; aspect-ratio: 3/4; overflow: hidden; border-radius: 12px;
+            margin-bottom: 10px; background: var(--soft-bg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+        }
+        
+        /* --- Slider Specific Styles --- */
+        .slider-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider-wrapper img {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slider-dots {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            z-index: 2;
+        }
+        .dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            transition: 0.3s;
+        }
+        .dot.active {
+            background: #fff;
+            width: 12px;
+            border-radius: 10px;
+        }
+        
+        .q-mark { 
+            font-size: 50px; 
+            color: var(--gold-primary); 
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: bold;
+        }
+        .coming-soon-overlay {
+            position: absolute; bottom: 10px; width: 90%; text-align: center;
+            font-size: 9px; color: #888; line-height: 1.3; font-weight: 600;
+        }
 
-.track{
-    display:flex;
-    transition:0.3s ease;
-}
+        .product-meta { text-align: right; padding: 0 5px; }
+        .product-meta h3 { font-family: 'Cormorant Garamond', serif; font-size: 16px; margin-bottom: 2px; }
+        .product-meta .price { font-weight: 600; font-size: 14px; color: var(--brand-dark); }
 
-.track img{
-    min-width:100%;
-    height:450px;
-    object-fit:cover;
-}
+        /* --- صفحة المنتج --- */
+        #pdp-screen {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: #fff; z-index: 6000; overflow-y: auto;
+            transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        #pdp-screen.active { transform: translateY(0); }
+        
+        .pdp-header { padding: 45px 20px 10px; display: flex; justify-content: flex-start; }
+        .pdp-img-box { width: 100%; padding: 0 20px; }
+        .pdp-img-box img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        .pdp-content { padding: 25px; text-align: right; }
+        .pdp-price { font-size: 24px; font-weight: 600; margin-bottom: 30px; }
 
-/* النقاط */
-.dots{
-    display:flex;
-    justify-content:center;
-    gap:6px;
-    margin-top:10px;
-}
+        .section-label { font-size: 11px; color: #aaa; text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; font-weight: bold; }
+        
+        .size-selector { display: flex; flex-direction: row-reverse; gap: 8px; margin-bottom: 30px; }
+        .size-box {
+            flex: 1; height: 50px; border: 1.5px solid #eee; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s;
+        }
+        .size-box.active { border-color: var(--brand-dark); background: var(--brand-dark); color: #fff; }
 
-.dot{
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:#ccc;
-    cursor:pointer; /* تم تغيير المؤشر ليظهر أنه قابل للضغط */
-}
+        .pay-option {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px; border: 1.5px solid #f5f5f5; border-radius: 12px;
+            margin-bottom: 10px; cursor: pointer; background: #fafafa;
+        }
+        .pay-option.active { border-color: var(--brand-dark); background: #fff; }
+        .check-icon { width: 20px; height: 20px; border: 1.5px solid #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .pay-option.active .check-icon { background: #2ecc71; border-color: #2ecc71; color: white; }
 
-.dot.active{
-    background:#000;
-}
+        .order-wa-button {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            width: 100%; background: var(--brand-dark); color: var(--gold-primary);
+            text-align: center; text-decoration: none; padding: 22px; border-radius: 15px;
+            font-weight: 600; font-size: 15px; letter-spacing: 1px; margin-top: 20px; margin-bottom: 50px;
+        }
 
-/* زر رجوع */
-.back{
-    padding:15px;
-    font-size:18px;
-    cursor:pointer;
-}
-
-</style>
+        .wa-float {
+            position: fixed; bottom: 30px; right: 25px; width: 60px; height: 60px;
+            background: var(--whatsapp-green); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 30px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); z-index: 4000; text-decoration: none;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- المنتج -->
-<div class="product-card" onclick="openPDP()">
-    <div class="img-container">
-        <img src="https://k.top4top.io/p_37889850m2.jpeg">
-    </div>
-    <h3>Butter Yellow</h3>
-    <p>KD 46</p>
+<div id="landing-screen">
+    <svg class="deer-svg" viewBox="0 0 100 100">
+        <path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke-width="2"/>
+        <path d="M40 45 L60 45 L55 75 L45 75 Z" fill="none" stroke-width="2.5"/>
+        <path d="M48 55 A2 2 0 1 1 52 55 A2 2 0 1 1 48 55" fill="var(--gold-primary)"/>
+    </svg>
+    <div class="logo-big">NVANE</div>
+    <div class="blazers-subtext">Blazers</div>
+    <button class="explore-btn" onclick="enterStore()">إكتشف المجموعة</button>
 </div>
 
-<!-- صفحة المنتج -->
-<div id="pdp">
+<header><div class="logo">NVANE</div></header>
 
-    <div class="back" onclick="closePDP()">← رجوع</div>
-
-    <div class="slider">
-
-        <div class="track" id="track">
-
-            <img src="https://k.top4top.io/p_37889850m2.jpeg">
-            <img src="https://b.top4top.io/p_37888f15g0.jpeg">
-
+<div class="feed-container">
+    <div class="grid-layout">
+        <!-- Butter Yellow Product WITH SLIDER -->
+        <div class="product-card" onclick="handleCardClick(event, 'Butter Yellow Set', '46')">
+            <div class="img-container">
+                <div class="slider-wrapper" id="main-slider">
+                    <!-- تم تعديل الروابط هنا للصور الجديدة وتغيير العدد لاثنتين -->
+                    <img src="https://h.top4top.io/p_3788llqpp1.jpeg" alt="Angle 1">
+                    <img src="https://i.top4top.io/p_3788qaeuj1.jpeg" alt="Angle 2">
+                </div>
+                <div class="slider-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="product-meta">
+                <h3>🍦 Butter Yellow</h3>
+                <div class="price">KD 46</div>
+            </div>
         </div>
 
+        <!-- Coming Soon Grid -->
+        <div class="product-card">
+            <div class="img-container"><div class="q-mark">؟</div><div class="coming-soon-overlay">قريباً..</div></div>
+            <div class="product-meta"><h3>Coming Soon</h3><div class="price">--</div></div>
+        </div>
+        <div class="product-card">
+            <div class="img-container"><div class="q-mark">؟</div><div class="coming-soon-overlay">قريباً..</div></div>
+            <div class="product-meta"><h3>Coming Soon</h3><div class="price">--</div></div>
+        </div>
+        <div class="product-card">
+            <div class="img-container"><div class="q-mark">؟</div><div class="coming-soon-overlay">قريباً..</div></div>
+            <div class="product-meta"><h3>Coming Soon</h3><div class="price">--</div></div>
+        </div>
     </div>
+</div>
 
-    <div class="dots">
-        <!-- تم إضافة onclick هنا لربط النقاط بالدالة مباشرة -->
-        <div class="dot active" onclick="go(0)"></div>
-        <div class="dot" onclick="go(1)"></div>
+<a href="https://wa.me/96564446249" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<div id="pdp-screen">
+    <div class="pdp-header">
+        <i class="fas fa-arrow-right" onclick="closePDP()" style="font-size: 24px; cursor: pointer; padding: 10px;"></i>
     </div>
+    <div class="pdp-img-box"><img id="p-img" src=""></div>
+    <div class="pdp-content">
+        <h1 id="p-title" style="font-family: 'Cormorant Garamond', serif; font-size: 30px; margin-bottom: 5px;">المنتج</h1>
+        <div class="pdp-price">KD <span id="p-price">0</span></div>
 
+        <span class="section-label">اختر المقاس / Size</span>
+        <div class="size-selector">
+            <div class="size-box" onclick="setSize('XL', this)">XL</div>
+            <div class="size-box" onclick="setSize('L', this)">L</div>
+            <div class="size-box active" onclick="setSize('M', this)">M</div>
+            <div class="size-box" onclick="setSize('S', this)">S</div>
+        </div>
+
+        <span class="section-label">طريقة الدفع / Payment</span>
+        <div id="payment-options">
+            <div class="pay-option active" onclick="setPay('ومض ⚡', this)">
+                <div class="check-icon"><i class="fas fa-check"></i></div>
+                <div style="font-weight: 600; font-size: 15px;">ومض (Wompi) ⚡</div>
+            </div>
+            <div class="pay-option" onclick="setPay('لينك 🔗', this)">
+                <div class="check-icon"><i class="fas fa-check"></i></div>
+                <div style="font-weight: 600; font-size: 15px;">رابط دفع (Link) 🔗</div>
+            </div>
+            <div class="pay-option" onclick="setPay('عند الاستلام 💵', this)">
+                <div class="check-icon"><i class="fas fa-check"></i></div>
+                <div style="font-weight: 600; font-size: 15px;">دفع عند الاستلام 💵</div>
+            </div>
+        </div>
+
+        <a id="wa-final-link" href="#" class="order-wa-button" target="_blank">
+            <span>إرسال الطلب عبر واتساب</span>
+            <i class="fab fa-whatsapp" style="font-size: 20px;"></i>
+        </a>
+    </div>
 </div>
 
 <script>
+    const PHONE = "96564446249";
+    let currentP = ""; let currentPay = "ومض ⚡"; let currentSize = "M";
+    
+    // Slider Logic
+    let currentSlide = 0;
+    const totalSlides = 2; // تم تعديلها إلى 2 لتطابق عدد الصور الجديدة
+    const sliderWrapper = document.getElementById('main-slider');
+    const dots = document.querySelectorAll('.dot');
 
-let index = 0;
-
-function openPDP(){
-    document.getElementById("pdp").classList.add("active");
-}
-
-function closePDP(){
-    document.getElementById("pdp").classList.remove("active");
-}
-
-const track = document.getElementById("track");
-const dots = document.querySelectorAll(".dot");
-
-function go(i){
-    index = i;
-    // تم تغيير الإشارة إلى موجبة لتتوافق مع اتجاه RTL
-    track.style.transform = `translateX(${i * 100}%)`;
-
-    dots.forEach(d=>d.classList.remove("active"));
-    dots[i].classList.add("active");
-}
-
-/* حساب السحب مع مراعاة اتجاه RTL */
-let startX = 0;
-
-track.addEventListener("touchstart", e=>{
-    startX = e.touches[0].clientX;
-});
-
-track.addEventListener("touchend", e=>{
-    let endX = e.changedTouches[0].clientX;
-
-    // السحب لليسار (الانتقال للصورة التالية في الـ RTL)
-    if(startX > endX + 50 && index < 1){
-        go(index + 1);
+    // وظيفة تبديل السلايدر
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSliderUI();
     }
 
-    // السحب لليمين (العودة للصورة السابقة في الـ RTL)
-    if(startX < endX - 50 && index > 0){
-        go(index - 1);
+    function updateSliderUI() {
+        // تحريك الصور (RTL) بالتوافق مع اتجاه الصفحة
+        sliderWrapper.style.transform = `translateX(${currentSlide * 100}%)`;
+        
+        // تحديث النقاط أسفل الصورة
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
     }
-});
 
+    // تشغيل السلايدر تلقائياً كل 3 ثواني
+    setInterval(nextSlide, 3000);
+
+    function enterStore() { document.getElementById('landing-screen').style.transform = 'translateY(-100%)'; }
+    
+    // التعامل مع الضغطة على كرت المنتج لفتح الصورة الحالية المعروضة بالسلايدر
+    function handleCardClick(event, name, price) {
+        const currentImgSrc = sliderWrapper.querySelectorAll('img')[currentSlide].src;
+        openPDP(name, price, currentImgSrc);
+    }
+
+    function openPDP(name, price, img) {
+        currentP = name;
+        document.getElementById('p-title').innerText = name;
+        document.getElementById('p-price').innerText = price;
+        document.getElementById('p-img').src = img;
+        document.getElementById('pdp-screen').style.display = 'block';
+        setTimeout(() => { document.getElementById('pdp-screen').classList.add('active'); updateLink(); }, 50);
+    }
+
+    function closePDP() { 
+        document.getElementById('pdp-screen').classList.remove('active'); 
+        setTimeout(() => document.getElementById('pdp-screen').style.display = 'none', 400); 
+    }
+
+    function setSize(val, el) { 
+        currentSize = val; 
+        document.querySelectorAll('.size-box').forEach(b => b.classList.remove('active')); 
+        el.classList.add('active'); 
+        updateLink(); 
+    }
+
+    function setPay(val, el) { 
+        currentPay = val; 
+        document.querySelectorAll('.pay-option').forEach(o => o.classList.remove('active')); 
+        el.classList.add('active'); 
+        updateLink(); 
+    }
+
+    function updateLink() {
+        const msg = `مرحباً NVANE ✨\nأود طلب: ${currentP}\nالمقاس: ${currentSize}\nطريقة الدفع: ${currentPay}`;
+        document.getElementById('wa-final-link').href = `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+    }
 </script>
-
 </body>
 </html>
