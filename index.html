@@ -25,7 +25,7 @@
             overflow-x: hidden;
         }
 
-        /* --- Ø´Ø§Ø´Ø© Ø§ÙØªØ±Ø­ÙØ¨ --- */
+        /* --- شاشة الترحيب --- */
         #landing-screen {
             height: 100vh; width: 100%;
             background-color: var(--brand-dark);
@@ -67,7 +67,7 @@
             cursor: pointer; margin-top: 60px;
         }
 
-        /* --- Ø§ÙÙÙØ¯Ø± --- */
+        /* --- الهيدر --- */
         header { 
             background-color: var(--brand-dark); padding: 20px 0; 
             text-align: center; position: sticky; top: 0; z-index: 1000;
@@ -77,7 +77,7 @@
             color: var(--gold-primary); letter-spacing: 6px; text-transform: uppercase; 
         }
 
-        /* --- Ø¹Ø±Ø¶ Ø§ÙÙÙØªØ¬Ø§Øª --- */
+        /* --- عرض المنتجات --- */
         .feed-container { padding: 25px; max-width: 500px; margin: auto; }
         .product-card { cursor: pointer; margin-bottom: 40px; }
         .img-container {
@@ -90,7 +90,7 @@
         .product-meta .desc { font-size: 13px; color: #888; margin-bottom: 8px; }
         .product-meta .price { font-weight: 600; font-size: 16px; }
 
-        /* --- Ø®Ø§ÙØ§Øª ÙØ±ÙØ¨Ø§Ù --- */
+        /* --- خانات قريباً --- */
         .coming-soon-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -124,7 +124,7 @@
             font-weight: 600;
         }
 
-        /* --- ØµÙØ­Ø© ØªÙØ§ØµÙÙ Ø§ÙÙÙØªØ¬ --- */
+        /* --- صفحة تفاصيل المنتج --- */
         #pdp-screen {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
             background: #fff; z-index: 6000; overflow-y: auto;
@@ -142,7 +142,7 @@
         .pdp-subtitle { font-size: 14px; color: #999; margin-bottom: 10px; }
         .pdp-price { font-size: 20px; font-weight: 600; margin-bottom: 25px; }
 
-        /* Ø§ÙÙÙØ§Ø³Ø§Øª */
+        /* المقاسات */
         .section-label { font-size: 11px; color: #bbb; text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; }
         .size-selector { display: flex; flex-direction: row-reverse; gap: 10px; margin-bottom: 30px; }
         .size-box {
@@ -203,29 +203,28 @@
     <div class="product-card" onclick="openPDP('Butter Yellow Set', '46', 'https://a.top4top.io/p_37878wrd51.jpeg')">
         <div class="img-container"><img src="https://a.top4top.io/p_37878wrd51.jpeg"></div>
         <div class="product-meta">
-            <h3>ð¦ Butter Yellow Set</h3>
-            <div class="desc">(ÙÙÙÙÙ + Ø¨ÙÙØ²Ø±)</div>
+            <h3>🍦 Butter Yellow Set</h3>
+            <div class="desc">(نفنوف + بليزر)</div>
             <div class="price">KD 46</div>
         </div>
     </div>
 
-    <!-- Ø®Ø§ÙØ§Øª Ø§Ø³ØªÙÙØ§Ù Ø°ÙØ¨ÙØ© -->
     <div class="coming-soon-grid">
         <div class="soon-box">
             <div class="q-mark">?</div>
-            <div class="soon-text">Ø³ÙØªÙÙØ± Ø§ÙØ¨Ø§ÙÙ ÙØ±ÙØ¨Ø§Ù Ø¨Ø¯Ø¹ÙÙ ð¦</div>
+            <div class="soon-text">سيتوفر الباقي قريباً بدعمكم 🦌</div>
         </div>
         <div class="soon-box">
             <div class="q-mark">?</div>
-            <div class="soon-text">Ø³ÙØªÙÙØ± Ø§ÙØ¨Ø§ÙÙ ÙØ±ÙØ¨Ø§Ù Ø¨Ø¯Ø¹ÙÙ ð¦</div>
+            <div class="soon-text">سيتوفر الباقي قريباً بدعمكم 🦌</div>
         </div>
         <div class="soon-box">
             <div class="q-mark">?</div>
-            <div class="soon-text">Ø³ÙØªÙÙØ± Ø§ÙØ¨Ø§ÙÙ ÙØ±ÙØ¨Ø§Ù Ø¨Ø¯Ø¹ÙÙ ð¦</div>
+            <div class="soon-text">سيتوفر الباقي قريباً بدعمكم 🦌</div>
         </div>
         <div class="soon-box">
             <div class="q-mark">?</div>
-            <div class="soon-text">Ø³ÙØªÙÙØ± Ø§ÙØ¨Ø§ÙÙ ÙØ±ÙØ¨Ø§Ù Ø¨Ø¯Ø¹ÙÙ ð¦</div>
+            <div class="soon-text">سيتوفر الباقي قريباً بدعمكم 🦌</div>
         </div>
     </div>
 </div>
@@ -242,14 +241,13 @@
 
     <div class="pdp-content">
         <div class="pdp-title-row">
-            <span id="p-emoji">ð¦</span>
+            <span id="p-emoji">🍦</span>
             <h1 id="p-title">Product Name</h1>
         </div>
-        <div class="pdp-subtitle">(ÙÙÙÙÙ + Ø¨ÙÙØ²Ø±)</div>
+        <div class="pdp-subtitle">(نفنوف + بليزر)</div>
         <div class="pdp-price">KD <span id="p-price">0</span></div>
 
-        <!-- Ø§Ø®ØªÙØ§Ø± Ø§ÙÙÙØ§Ø³ -->
-        <span class="section-label">Size / Ø§ÙÙÙØ§Ø³</span>
+        <span class="section-label">Size / المقاس</span>
         <div class="size-selector">
             <div class="size-box" onclick="setSize('XL', this)">XL</div>
             <div class="size-box" onclick="setSize('L', this)">L</div>
@@ -261,28 +259,28 @@
             ORDER VIA WHATSAPP
         </a>
 
-        <span class="payment-label">PAYMENT / Ø·Ø±ÙÙØ© Ø§ÙØ¯ÙØ¹</span>
+        <span class="payment-label">PAYMENT / طريقة الدفع</span>
         
-        <div class="pay-option active" onclick="setPay('ÙÙØ¶ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨ â¡', this)">
+        <div class="pay-option active" onclick="setPay('ومض عبر واتساب ⚡', this)">
             <div class="check-icon"><i class="fas fa-check"></i></div>
             <div class="pay-info">
-                <span>ÙÙØ¶ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨</span>
+                <span>ومض عبر واتساب</span>
                 <i class="fas fa-bolt" style="color: #f1c40f;"></i>
             </div>
         </div>
 
-        <div class="pay-option" onclick="setPay('ÙÙÙÙ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨ ð', this)">
+        <div class="pay-option" onclick="setPay('لينك عبر واتساب 🔗', this)">
             <div class="check-icon"><i class="fas fa-check"></i></div>
             <div class="pay-info">
-                <span>ÙÙÙÙ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨</span>
+                <span>لينك عبر واتساب</span>
                 <i class="fas fa-link" style="color: #333;"></i>
             </div>
         </div>
 
-        <div class="pay-option" onclick="setPay('Ø§ÙØ¯ÙØ¹ Ø¹ÙØ¯ Ø§ÙØ§Ø³ØªÙØ§Ù (ÙØ§Ø´) ðµ', this)">
+        <div class="pay-option" onclick="setPay('الدفع عند الاستلام (كاش) 💵', this)">
             <div class="check-icon"><i class="fas fa-check"></i></div>
             <div class="pay-info">
-                <span>Ø§ÙØ¯ÙØ¹ Ø¹ÙØ¯ Ø§ÙØ§Ø³ØªÙØ§Ù (ÙØ§Ø´)</span>
+                <span>الدفع عند الاستلام (كاش)</span>
                 <i class="fas fa-money-bill-wave" style="color: #2ecc71;"></i>
             </div>
         </div>
@@ -292,7 +290,7 @@
 <script>
     const PHONE = "96564446249";
     let currentP = "";
-    let currentPay = "ÙÙØ¶ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨ â¡";
+    let currentPay = "ومض عبر واتساب ⚡";
     let currentSize = "M";
 
     function enterStore() { document.getElementById('landing-screen').style.transform = 'translateY(-100%)'; }
@@ -329,12 +327,10 @@
     }
 
     function updateLink() {
-        const msg = `ÙØ±Ø­Ø¨Ø§Ù NVANE â¨\n\nØ£ÙØ¯ Ø·ÙØ¨ Ø§ÙÙÙØªØ¬ Ø§ÙØªØ§ÙÙ ð¦:\nð§¥ Ø§ÙÙÙØªØ¬: ${currentP}\nð Ø§ÙÙÙØ§Ø³: ${currentSize}\nð³ Ø·Ø±ÙÙØ© Ø§ÙØ¯ÙØ¹: ${currentPay}\n\nØ´ÙØ±Ø§Ù ÙÙÙ ð¤`;
+        const msg = `مرحباً NVANE ✨\n\nأود طلب المنتج التالي 🦌:\n🧥 المنتج: ${currentP}\n📏 المقاس: ${currentSize}\n💳 طريقة الدفع: ${currentPay}\n\nشكراً لكم 🤍`;
         document.getElementById('wa-final-link').href = `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
     }
 </script>
 
 </body>
 </html>
-
-```
