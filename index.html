@@ -1,3 +1,4 @@
+
 ```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -95,6 +96,7 @@
             width: 100%;
             height: 100%;
             transition: transform 0.5s ease-in-out;
+            /* سيتم التحكم بـ transform عبر JS */
         }
         .slider-wrapper img {
             min-width: 100%;
@@ -208,12 +210,14 @@
         <div class="product-card" onclick="handleCardClick(event, 'Butter Yellow Set', '46')">
             <div class="img-container">
                 <div class="slider-wrapper" id="main-slider">
-                    <!-- تم تعديل الروابط هنا للصور الجديدة وتغيير العدد لاثنتين -->
-                    <img src="https://h.top4top.io/p_3788llqpp1.jpeg" alt="Angle 1">
-                    <img src="https://i.top4top.io/p_3788qaeuj1.jpeg" alt="Angle 2">
+                    <!-- الصور الثلاث بالترتيب -->
+                    <img src="https://a.top4top.io/p_37878wrd51.jpeg" alt="Angle 1">
+                    <img src="https://a.top4top.io/p_31191jptk1.jpg" alt="Angle 2">
+                    <img src="https://e.top4top.io/p_31191jptk1.jpg" alt="Angle 3">
                 </div>
                 <div class="slider-dots">
                     <div class="dot active"></div>
+                    <div class="dot"></div>
                     <div class="dot"></div>
                 </div>
             </div>
@@ -287,7 +291,7 @@
     
     // Slider Logic
     let currentSlide = 0;
-    const totalSlides = 2; // تم تعديلها إلى 2 لتطابق عدد الصور الجديدة
+    const totalSlides = 3;
     const sliderWrapper = document.getElementById('main-slider');
     const dots = document.querySelectorAll('.dot');
 
@@ -298,10 +302,10 @@
     }
 
     function updateSliderUI() {
-        // تحريك الصور (RTL) بالتوافق مع اتجاه الصفحة
+        // تحريك الصور (RTL)
         sliderWrapper.style.transform = `translateX(${currentSlide * 100}%)`;
         
-        // تحديث النقاط أسفل الصورة
+        // تحديث النقاط
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
         });
@@ -312,8 +316,9 @@
 
     function enterStore() { document.getElementById('landing-screen').style.transform = 'translateY(-100%)'; }
     
-    // التعامل مع الضغطة على كرت المنتج لفتح الصورة الحالية المعروضة بالسلايدر
+    // التعامل مع الضغطة على كرت المنتج
     function handleCardClick(event, name, price) {
+        // نفتح صفحة المنتج بناءً على الصورة الحالية في السلايدر
         const currentImgSrc = sliderWrapper.querySelectorAll('img')[currentSlide].src;
         openPDP(name, price, currentImgSrc);
     }
@@ -353,3 +358,5 @@
 </script>
 </body>
 </html>
+
+```
