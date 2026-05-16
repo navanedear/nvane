@@ -51,7 +51,7 @@
             background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 14px 45px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; margin-top: 55px;
         }
 
-        /* --- الهيدر الفخم مع الشعار الكبير البارز (حجم ثابت دايماً) --- */
+        /* --- الهيدر الفخم الثابت والمعدل --- */
         header { 
             background-color: var(--brand-dark); padding: 30px 40px; display: flex; justify-content: center; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
@@ -113,22 +113,17 @@
 
         .card-btn { display: block; width: 100%; background: var(--brand-dark); color: var(--gold-light); text-align: center; padding: 10px; border-radius: 4px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-weight: 700; }
 
-        /* خانات قريباً (تم تصغيرها وتنعيم خطها بشكل راقٍ) */
+        /* خانات قريباً الناعمة بالأسفل */
         .coming-soon-wrapper { width: 100%; margin-top: 5px; }
         .coming-soon-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
         @media (max-width: 768px) { .coming-soon-grid { grid-template-columns: 1fr; gap: 10px; } }
         
         .soon-box { 
-            background: #ffffff; border: 1px solid #ebdcc5; border-radius: 6px; 
-            height: 75px; /* تم تقليل الارتفاع لتبدو أصغر وأنعم */
+            background: #ffffff; border: 1px solid #ebdcc5; border-radius: 6px; height: 75px; 
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
             text-align: center; padding: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.01); 
         }
-        .soon-box .soon-text { 
-            color: var(--brand-dark); 
-            font-size: 11.5px; /* تصغير الخط ليناسب الحجم الجديد */
-            font-weight: 600; line-height: 1.4; 
-        }
+        .soon-box .soon-text { color: var(--brand-dark); font-size: 11.5px; font-weight: 600; line-height: 1.4; }
 
         /* --- صفحة تفاصيل المنتج وسلايدر الصور الأصلي المتكامل --- */
         #pdp-screen {
@@ -234,12 +229,12 @@
             </div>
         </div>
 
-        <div class="product-card" onclick="openPDP('The luxury Linen set \'26 🪄🤍', '50', ['https://k.top4top.io/p_37880nmxm1.jpeg', 'https://l.top4top.io/p_3788bngp12.jpeg', 'https://a.top4top.io/p_378890w893.jpeg', 'https://b.top4top.io/p_37883ew4y4.jpeg', 'https://c.top4top.io/p_3788l4leg5.jpeg', 'https://d.top4top.io/p_37888hc6v6.jpeg'], '')">
+        <div class="product-card" onclick="openPDP('Black Satin Blazer', '36', ['https://k.top4top.io/p_37880nmxm1.jpeg', 'https://l.top4top.io/p_3788bngp12.jpeg', 'https://a.top4top.io/p_378890w893.jpeg', 'https://b.top4top.io/p_37883ew4y4.jpeg', 'https://c.top4top.io/p_3788l4leg5.jpeg'], '')">
             <div class="img-container"><img src="https://k.top4top.io/p_37880nmxm1.jpeg"></div>
             <div class="product-meta">
-                <h3>The luxury Linen set '26 🪄🤍</h3>
-                <div class="desc">(Size upon request)</div>
-                <div class="price">KD 50</div>
+                <h3>Black Satin Blazer</h3>
+                <div class="desc">(Custom Sizes Available)</div>
+                <div class="price">KD 36</div>
                 <span class="card-btn">Order Via WhatsApp</span>
             </div>
         </div>
@@ -324,6 +319,8 @@
         
         if(name.includes('Eid set') || name.includes('Linen set')) {
             document.getElementById('p-sub').innerText = "(Size upon request)";
+        } else if(name.includes('Black Satin Blazer')) {
+            document.getElementById('p-sub').innerText = "(Custom Sizes Available)";
         } else {
             document.getElementById('p-sub').innerText = "(نفنوف + بليزر)";
         }
