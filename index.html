@@ -51,7 +51,7 @@
             background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 14px 45px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; margin-top: 55px;
         }
 
-        /* --- الهيدر الفخم مع الشعار الكبير البارز --- */
+        /* --- الهيدر الفخم مع الشعار الكبير البارز (حجم ثابت دايماً) --- */
         header { 
             background-color: var(--brand-dark); padding: 30px 40px; display: flex; justify-content: center; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
@@ -69,7 +69,7 @@
             display: flex; flex-direction: column; gap: 30px;
         }
 
-        /* البانر الإعلاني (صار منفصل وبأول الصفحة دايماً) */
+        /* البانر الإعلاني */
         .hero-banner-wrapper { width: 100%; }
         .hero-banner {
             background: #ffffff; border: 1px solid #eae1d4; border-radius: 4px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 30px rgba(184,154,108,0.03);
@@ -113,13 +113,22 @@
 
         .card-btn { display: block; width: 100%; background: var(--brand-dark); color: var(--gold-light); text-align: center; padding: 10px; border-radius: 4px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-weight: 700; }
 
-        /* خانات قريباً الثابتة تحت بالأسفل دايماً */
-        .coming-soon-wrapper { width: 100%; margin-top: 10px; }
-        .coming-soon-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
-        @media (max-width: 768px) { .coming-soon-grid { grid-template-columns: 1fr; } }
+        /* خانات قريباً (تم تصغيرها وتنعيم خطها بشكل راقٍ) */
+        .coming-soon-wrapper { width: 100%; margin-top: 5px; }
+        .coming-soon-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+        @media (max-width: 768px) { .coming-soon-grid { grid-template-columns: 1fr; gap: 10px; } }
         
-        .soon-box { background: #ffffff; border: 1px solid #ebdcc5; border-radius: 6px; height: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.01); }
-        .soon-box .soon-text { color: var(--brand-dark); font-size: 13px; font-weight: 700; line-height: 1.5; }
+        .soon-box { 
+            background: #ffffff; border: 1px solid #ebdcc5; border-radius: 6px; 
+            height: 75px; /* تم تقليل الارتفاع لتبدو أصغر وأنعم */
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            text-align: center; padding: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.01); 
+        }
+        .soon-box .soon-text { 
+            color: var(--brand-dark); 
+            font-size: 11.5px; /* تصغير الخط ليناسب الحجم الجديد */
+            font-weight: 600; line-height: 1.4; 
+        }
 
         /* --- صفحة تفاصيل المنتج وسلايدر الصور الأصلي المتكامل --- */
         #pdp-screen {
