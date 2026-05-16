@@ -51,7 +51,7 @@
             background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 14px 45px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; margin-top: 55px;
         }
 
-        /* --- الهيدر الجديد المتطابق مع الشعار الأخير بالظبط --- */
+        /* --- الهيدر الفخم المعتمد --- */
         header { 
             background-color: var(--brand-dark); 
             padding: 35px 20px 30px; 
@@ -69,11 +69,11 @@
             align-items: center;
             text-align: center;
             width: 100%;
-            max-width: 320px; /* تحديد العرض ليتناسق امتداد الخط */
+            max-width: 320px;
         }
         .header-wrap .logo { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 56px; /* تكبير الخط ليكون بارز وملك مثل الصورة */
+            font-size: 56px; 
             font-weight: 300; 
             color: var(--gold-light); 
             letter-spacing: 8px; 
@@ -82,7 +82,6 @@
             margin-bottom: 12px;
             margin-left: -8px; 
         }
-        /* تصميم الخط النحيف الممتد مع النجمة بالمنتصف */
         .logo-divider {
             display: flex;
             align-items: center;
@@ -98,13 +97,12 @@
             right: 0;
             top: 50%;
             height: 0.5px;
-            background-color: rgba(235, 220, 197, 0.35); /* خط نحيف جداً وناعم */
-            z-index: 1;
+            background-color: rgba(235, 220, 197, 0.35);
         }
         .logo-divider .sparkle {
             color: var(--gold-light);
             font-size: 11px;
-            background-color: var(--brand-dark); /* لقطع الخط بالخلفية */
+            background-color: var(--brand-dark);
             padding: 0 10px;
             position: relative;
             z-index: 2;
@@ -126,21 +124,48 @@
             display: flex; flex-direction: column; gap: 30px;
         }
 
-        /* البانر الإعلاني المتناسق بدون SOON */
+        /* --- البانر الإعلاني (الكرت) المعدل ليكون بالداخل وصغير --- */
         .hero-banner-wrapper { width: 100%; }
         .hero-banner {
-            background: #ffffff; border: 1px solid #eae1d4; border-radius: 4px; padding: 50px 20px; text-align: center; box-shadow: 0 10px 30px rgba(184,154,108,0.03);
+            background: #ffffff; 
+            border: 1px solid #eae1d4; 
+            border-radius: 4px; 
+            padding: 40px 20px; 
+            text-align: center; 
+            box-shadow: 0 10px 30px rgba(184,154,108,0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .hero-banner h2 { 
+        
+        /* الحاوية البيضاوية الفخمة وبداخلها النص صغير ومضبوط */
+        .badge-box {
+            border: 1.5px solid var(--gold-primary);
+            border-radius: 50px;
+            padding: 10px 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            max-width: 90%;
+        }
+        .badge-box h2 { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 46px; 
+            font-size: 16px; /* تصغير الخط شوي نفس ما طلبت */
             color: var(--gold-primary); 
-            margin-bottom: 15px; 
-            font-weight: 700; 
-            letter-spacing: 4px;
+            font-weight: 500; 
+            letter-spacing: 3px;
             text-transform: uppercase;
+            line-height: 1;
         }
-        .hero-banner p { font-size: 14px; color: #7a7065; letter-spacing: 1px; line-height: 1.6; font-weight: 500; }
+        .badge-box .inner-sparkle {
+            color: var(--gold-primary);
+            font-size: 10px;
+            opacity: 0.8;
+        }
+        .hero-banner p { font-size: 12.5px; color: #7a7065; letter-spacing: 0.5px; line-height: 1.5; font-weight: 500; max-width: 320px; margin-top: 5px; }
 
         /* حاوية المنتجات بالمنتصف */
         .products-wrapper { 
@@ -150,7 +175,7 @@
             .products-wrapper { display: flex; flex-direction: column; gap: 0; }
         }
 
-        /* تصميم بطاقات المنتجات المصغرة الأنيقة */
+        /* تصميم بطاقات المنتجات */
         .product-card { 
             background: #ffffff; border: 1px solid #eee6dc; border-radius: 6px; padding: 14px; cursor: pointer; transition: 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-bottom: 25px; width: 100%;
         }
@@ -166,7 +191,7 @@
 
         .card-btn { display: block; width: 100%; background: var(--brand-dark); color: var(--gold-light); text-align: center; padding: 10px; border-radius: 4px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-weight: 700; }
 
-        /* خانات قريباً الناعمة بالأسفل */
+        /* خانات قريباً بالأسفل */
         .coming-soon-wrapper { width: 100%; margin-top: 5px; }
         .coming-soon-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
         @media (max-width: 768px) { .coming-soon-grid { grid-template-columns: 1fr; gap: 10px; } }
@@ -178,7 +203,7 @@
         }
         .soon-box .soon-text { color: var(--brand-dark); font-size: 11.5px; font-weight: 600; line-height: 1.4; }
 
-        /* --- صفحة تفاصيل المنتج وسلايدر الصور الأصلي المتكامل --- */
+        /* --- صفحة تفاصيل المنتج وسلايدر الصور --- */
         #pdp-screen {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 6000; overflow-y: auto; transform: translateY(100%); transition: transform 0.5s ease;
         }
@@ -244,7 +269,11 @@
     
     <div class="hero-banner-wrapper">
         <div class="hero-banner">
-            <h2>The New Collection</h2>
+            <div class="badge-box">
+                <span class="inner-sparkle">解</span>
+                <h2>The New Collection</h2>
+                <span class="inner-sparkle">解</span>
+            </div>
             <p>Discover the essence of style: NVANE luxury blazers for women</p>
         </div>
     </div>
