@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* --- شاشة الترحيب الأصيلة --- */
+        /* --- شاشة الترحيب الكبيرة والمحدثة --- */
         #landing-screen {
             height: 100vh; width: 100%;
             background-color: var(--brand-dark);
@@ -36,42 +36,48 @@
         }
         
         .deer-svg {
-            width: 80px; height: 80px; fill: none; stroke: var(--gold-primary); stroke-width: 1.5; margin-bottom: 5px;
+            width: 100px; height: 100px; fill: none; stroke: var(--gold-primary); stroke-width: 1.5; margin-bottom: 15px;
         }
 
+        /* تكبير شعار شاشة البدء */
         #landing-screen .logo-big { 
-            font-family: 'Cormorant Garamond', serif; color: var(--gold-primary); font-size: 55px; letter-spacing: 15px; text-transform: uppercase; margin-left: -15px;
+            font-family: 'Cormorant Garamond', serif; color: var(--gold-primary); font-size: 75px; letter-spacing: 20px; text-transform: uppercase; margin-left: -20px; font-weight: 600;
         }
 
         .blazers-subtext {
-            color: var(--gold-primary); font-family: 'Cormorant Garamond', serif; font-size: 20px; letter-spacing: 10px; text-transform: uppercase; margin-top: 5px;
+            color: var(--gold-primary); font-family: 'Cormorant Garamond', serif; font-size: 24px; letter-spacing: 12px; text-transform: uppercase; margin-top: 10px;
         }
 
         .explore-btn { 
-            background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 15px 50px; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; margin-top: 60px;
+            background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 18px 60px; font-size: 12px; text-transform: uppercase; letter-spacing: 4px; cursor: pointer; margin-top: 60px; transition: 0.3s;
         }
+        .explore-btn:hover { background: var(--gold-primary); color: var(--brand-dark); }
 
-        /* --- الهيدر الفخم --- */
+        /* --- الهيدر الفخم مع الشعار المكبّر --- */
         header { 
-            background-color: var(--brand-dark); padding: 20px 40px; display: flex; justify-content: center; align-items: center; position: sticky; top: 0; z-index: 1000;
+            background-color: var(--brand-dark); padding: 25px 40px; display: flex; justify-content: center; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         header .header-wrap {
             width: 100%; max-width: 1200px; display: flex; justify-content: space-between; align-items: center;
         }
+        /* تكبير حجم الشعار الأساسي في الموقع */
         header .logo { 
-            font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--gold-light); letter-spacing: 8px; text-transform: uppercase; margin: auto; transform: translateX(15px);
+            font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: var(--gold-light); letter-spacing: 12px; text-transform: uppercase; margin: auto; transform: translateX(15px);
         }
-        header .deer-mini { width: 24px; height: 24px; fill: none; stroke: var(--gold-primary); stroke-width: 1.5; }
+        header .deer-mini { width: 30px; height: 30px; fill: none; stroke: var(--gold-primary); stroke-width: 1.5; }
 
-        /* --- التوزيع الثلاثي للموقع (نفس الصورة تماماً) --- */
+        /* --- التوزيع الثلاثي للموقع (المنتجات فوق أول شيء) --- */
         .main-layout {
             max-width: 1400px; margin: 40px auto; padding: 0 25px;
             display: grid; grid-template-columns: 280px 1fr 280px; gap: 25px; align-items: start;
         }
 
+        /* لضمان ظهور المنتجات أول شيء على الشاشات الصغيرة والموبايل */
         @media (max-width: 1100px) {
-            .main-layout { grid-template-columns: 1fr; }
-            .center-column { order: -1; }
+            .main-layout { display: flex; flex-direction: column; }
+            .side-column-1 { order: 1; width: 100%; }
+            .side-column-2 { order: 2; width: 100%; }
+            .center-column { order: 3; width: 100%; }
         }
 
         /* البانر الإعلاني بالمنتصف */
@@ -93,7 +99,7 @@
         .hero-banner h2 { font-family: 'Cormorant Garamond', serif; font-size: 38px; color: var(--brand-dark); margin-bottom: 10px; font-weight: 400; }
         .hero-banner p { font-size: 13px; color: #7a7065; letter-spacing: 1px; line-height: 1.6; }
 
-        /* تصميم بطاقات المنتجات المصغرة الناعمة */
+        /* تصميم بطاقات المنتجات المصغرة الأنيقة */
         .product-card { 
             background: #ffffff; border: 1px solid #eee6dc; border-radius: 6px; padding: 14px; cursor: pointer; transition: 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-bottom: 25px;
         }
@@ -109,7 +115,7 @@
 
         .card-btn { display: block; width: 100%; background: var(--brand-dark); color: var(--gold-light); text-align: center; padding: 10px; border-radius: 4px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-weight: 700; }
 
-        /* --- خانات قريباً المحدثة بالنص العربي والغزال وعُدلت لتكون تحت المنتجات --- */
+        /* --- خانات قريباً المحدثة بالنص العربي والغزال --- */
         .coming-soon-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 25px; }
         @media (max-width: 768px) { .coming-soon-grid { grid-template-columns: 1fr; } }
         
@@ -180,7 +186,7 @@
 
 <div class="main-layout">
     
-    <div class="side-column">
+    <div class="side-column-1">
         <div class="product-card" onclick="openPDP('Butter Yellow Set', '46', ['https://a.top4top.io/p_37878wrd51.jpeg', 'https://f.top4top.io/p_3788e4qyi0.jpeg', 'https://g.top4top.io/p_3788bfsxw1.jpeg'], '🍦')">
             <div class="img-container"><img src="https://a.top4top.io/p_37878wrd51.jpeg"></div>
             <div class="product-meta">
@@ -197,6 +203,18 @@
                 <h3>The luxury Linen set '26 🪄🤍</h3>
                 <div class="desc">(Size upon request)</div>
                 <div class="price">KD 50</div>
+                <span class="card-btn">Order Via WhatsApp</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-column-2">
+        <div class="product-card" onclick="openPDP('The perfect Eid set \'26 🪄💌', '55', ['https://a.top4top.io/p_37880lsll1.jpeg', 'https://b.top4top.io/p_3788uufhi2.jpeg', 'https://d.top4top.io/p_3788cu95j4.jpeg', 'https://c.top4top.io/p_37887ufev3.jpeg'], '')">
+            <div class="img-container"><img src="https://a.top4top.io/p_37880lsll1.jpeg"></div>
+            <div class="product-meta">
+                <h3>The perfect Eid set '26 🪄💌</h3>
+                <div class="desc">(Size upon request)</div>
+                <div class="price">KD 55</div>
                 <span class="card-btn">Order Via WhatsApp</span>
             </div>
         </div>
@@ -229,18 +247,6 @@
             </div>
             <div class="soon-box">
                 <div class="soon-text">سيتوفر قريباً بدعمكم 🦌</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="side-column">
-        <div class="product-card" onclick="openPDP('The perfect Eid set \'26 🪄💌', '55', ['https://a.top4top.io/p_37880lsll1.jpeg', 'https://b.top4top.io/p_3788uufhi2.jpeg', 'https://d.top4top.io/p_3788cu95j4.jpeg', 'https://c.top4top.io/p_37887ufev3.jpeg'], '')">
-            <div class="img-container"><img src="https://a.top4top.io/p_37880lsll1.jpeg"></div>
-            <div class="product-meta">
-                <h3>The perfect Eid set '26 🪄💌</h3>
-                <div class="desc">(Size upon request)</div>
-                <div class="price">KD 55</div>
-                <span class="card-btn">Order Via WhatsApp</span>
             </div>
         </div>
     </div>
