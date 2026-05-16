@@ -51,10 +51,10 @@
             background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 14px 45px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; margin-top: 55px;
         }
 
-        /* --- الهيدر الفخم المعتمد --- */
+        /* --- الهيدر الثابت مع تصغير الحجم بالكامل --- */
         header { 
             background-color: var(--brand-dark); 
-            padding: 35px 20px 30px; 
+            padding: 20px 20px 18px; /* تقليل المسافات العلوية والسفلية ليصبح الهيدر أنحف */
             display: flex; 
             justify-content: center; 
             align-items: center; 
@@ -69,18 +69,18 @@
             align-items: center;
             text-align: center;
             width: 100%;
-            max-width: 320px;
+            max-width: 240px; /* تصغير عرض الحاوية بالكامل */
         }
         .header-wrap .logo { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 56px; 
+            font-size: 38px; /* تصغير حجم اللوجو بشكل ملحوظ وناعم */
             font-weight: 300; 
             color: var(--gold-light); 
-            letter-spacing: 8px; 
+            letter-spacing: 6px; 
             text-transform: uppercase;
             line-height: 0.9;
-            margin-bottom: 12px;
-            margin-left: -8px; 
+            margin-bottom: 8px;
+            margin-left: -6px; 
         }
         .logo-divider {
             display: flex;
@@ -88,7 +88,7 @@
             justify-content: center;
             width: 100%;
             position: relative;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
         .logo-divider::before {
             content: "";
@@ -101,21 +101,21 @@
         }
         .logo-divider .sparkle {
             color: var(--gold-light);
-            font-size: 11px;
+            font-size: 9px; /* تصغير النجمة */
             background-color: var(--brand-dark);
-            padding: 0 10px;
+            padding: 0 8px;
             position: relative;
             z-index: 2;
             line-height: 1;
         }
         .header-wrap .sub-logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
+            font-size: 7.5px; /* تصغير النص السفلي ليتناسق مع الحجم الجديد */
             font-weight: 400;
             color: rgba(235, 220, 197, 0.6);
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-left: -5px;
+            margin-left: -4px;
         }
 
         /* --- حاوية الهيكل العام للموقع --- */
@@ -124,7 +124,7 @@
             display: flex; flex-direction: column; gap: 30px;
         }
 
-        /* --- البانر الإعلاني (الارتفاع والحجم بعد التكبير) --- */
+        /* --- البانر الإعلاني الكرت --- */
         .hero-banner-wrapper { width: 100%; }
         .hero-banner {
             background: #ffffff; 
@@ -139,11 +139,10 @@
             justify-content: center;
         }
         
-        /* تكبير الكرت الداخلي بشكل متناسق وفخم */
         .badge-box {
             border: 1.5px solid var(--gold-primary);
             border-radius: 50px;
-            padding: 14px 40px; /* زيادة مساحة البادينغ ليتوسع الكرت */
+            padding: 14px 40px; 
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -153,7 +152,7 @@
         }
         .badge-box h2 { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 21px; /* تكبير خط نيو كلكشن */
+            font-size: 21px; 
             color: var(--gold-primary); 
             font-weight: 500; 
             letter-spacing: 4px;
