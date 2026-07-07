@@ -1,5 +1,4 @@
 
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -54,11 +53,11 @@
         /* --- الهيدر (ثابت فوق بالقمة ولا ينزل مع السكرول + حجم صغير حيل) --- */
         header { 
             background-color: var(--brand-dark); 
-            padding: 14px 20px 12px; /* أنحف وأصغر */
+            padding: 14px 20px 12px; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            position: absolute; /* الحين صار ثابت فوق بالصفحة وما يلحقك إذا نزلت تحت */
+            position: absolute; 
             top: 0; 
             left: 0;
             width: 100%;
@@ -70,11 +69,11 @@
             align-items: center;
             text-align: center;
             width: 100%;
-            max-width: 180px; /* تصغير عرض الحاوية بالكامل حيل */
+            max-width: 180px; 
         }
         .header-wrap .logo { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 26px; /* تصغير حجم اللوجو حيل ليصبح ناعم جداً */
+            font-size: 26px; 
             font-weight: 300; 
             color: var(--gold-light); 
             letter-spacing: 5px; 
@@ -102,7 +101,7 @@
         }
         .logo-divider .sparkle {
             color: var(--gold-light);
-            font-size: 7px; /* نجمة صغيرة وناعمة */
+            font-size: 7px; 
             background-color: var(--brand-dark);
             padding: 0 6px;
             position: relative;
@@ -111,7 +110,7 @@
         }
         .header-wrap .sub-logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 6px; /* كتابة سفلية دقيقة وراقية */
+            font-size: 6px; 
             font-weight: 400;
             color: rgba(235, 220, 197, 0.5);
             letter-spacing: 3px;
@@ -119,7 +118,7 @@
             margin-left: -3px;
         }
 
-        /* --- حاوية الهيكل العام للموقع (إضافة مسافة علوية عشان الهيدر المطلق) --- */
+        /* --- حاوية الهيكل العام للموقع --- */
         .main-layout {
             max-width: 1400px; margin: 90px auto 40px; padding: 0 25px;
             display: flex; flex-direction: column; gap: 30px;
@@ -308,6 +307,28 @@
                 <span class="card-btn">Order Via WhatsApp</span>
             </div>
         </div>
+
+        <!-- المنتج الجديد 1: توب عنابي -->
+        <div class="product-card" onclick="openPDP('توب عنابي ❣️', '19', ['https://c.top4top.io/p_3839rp08h0.jpeg', 'https://d.top4top.io/p_38393z7f41.jpeg'], '')">
+            <div class="img-container"><img src="https://c.top4top.io/p_3839rp08h0.jpeg"></div>
+            <div class="product-meta">
+                <h3>توب عنابي ❣️</h3>
+                <div class="desc">(Pre-order Available)</div>
+                <div class="price">KD 19</div>
+                <span class="card-btn">Order Via WhatsApp</span>
+            </div>
+        </div>
+
+        <!-- المنتج الجديد 2: ست كامل لنن ابيض -->
+        <div class="product-card" onclick="openPDP('ست كامل لنن ابيض 🤍', '45', ['https://e.top4top.io/p_3839qgk1v2.jpeg', 'https://f.top4top.io/p_3839f8whc3.jpeg', 'https://h.top4top.io/p_3839t3byi5.jpeg'], '')">
+            <div class="img-container"><img src="https://e.top4top.io/p_3839qgk1v2.jpeg"></div>
+            <div class="product-meta">
+                <h3>ست كامل لنن ابيض 🤍</h3>
+                <div class="desc">(Size upon request)</div>
+                <div class="price">KD 45</div>
+                <span class="card-btn">Order Via WhatsApp</span>
+            </div>
+        </div>
     </div>
 
     <div class="coming-soon-wrapper">
@@ -387,7 +408,7 @@
         document.getElementById('p-price').innerText = price;
         document.getElementById('p-emoji').innerText = emoji;
         
-        if(name.includes('Eid set') || name.includes('Linen set')) {
+        if(name.includes('Eid set') || name.includes('Linen set') || name.includes('لنن')) {
             document.getElementById('p-sub').innerText = "(Size upon request)";
         } else if(name.includes('Black Satin Blazer')) {
             document.getElementById('p-sub').innerText = "(Custom Sizes Available)";
