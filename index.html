@@ -1,59 +1,121 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>NVANE | Luxury Collection</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>NVANE | Premium Luxury Collection</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- المتغيرات الثنائية للبراند الفاخر --- */
         :root {
+            --brand-black: #1a1410; 
             --brand-dark: #261c14; 
             --gold-primary: #b89a6c;
             --gold-light: #ebdcc5;
-            --whatsapp-green: #25D366;
+            --gold-dark: #93784f;
             --bg-cream: #fbf9f6;
+            --bg-white: #ffffff;
+            --text-muted: #8a7e72;
+            --border-color: #eee6dc;
+            --whatsapp-green: #25D366;
+            --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+        /* --- التصفير الشامل وتحسين العرض للموبايل --- */
+        * { 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent; 
+            margin: 0; 
+            padding: 0; 
+            letter-spacing: 0.5px;
+        }
         
         body { 
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-cream);
             color: var(--brand-dark);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* --- شاشة الترحيب الناعمة والأنيقة --- */
+        /* --- شاشة الترحيب الإبداعية الفاخرة --- */
         #landing-screen {
-            height: 100vh; width: 100%;
-            background-color: var(--brand-dark);
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            position: fixed; top: 0; left: 0; z-index: 5000;
-            transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+            height: 100vh; 
+            width: 100%;
+            background: radial-gradient(circle at center, var(--brand-dark) 0%, var(--brand-black) 100%);
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            z-index: 9999;
+            transition: all 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+            opacity: 1;
         }
         
         .deer-svg {
-            width: 75px; height: 75px; fill: none; stroke: var(--gold-primary); stroke-width: 1.2; margin-bottom: 8px;
+            width: 90px; 
+            height: 90px; 
+            fill: none; 
+            stroke: var(--gold-primary); 
+            stroke-width: 1; 
+            margin-bottom: 20px;
+            animation: fadeInDeer 2s ease-in-out;
         }
 
         #landing-screen .logo-big { 
-            font-family: 'Cormorant Garamond', serif; color: var(--gold-primary); font-size: 48px; letter-spacing: 16px; text-transform: uppercase; margin-left: -16px; font-weight: 400;
+            font-family: 'Cormorant Garamond', serif; 
+            color: var(--gold-primary); 
+            font-size: 56px; 
+            letter-spacing: 20px; 
+            text-transform: uppercase; 
+            margin-left: -20px; 
+            font-weight: 300;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .blazers-subtext {
-            color: var(--gold-primary); font-family: 'Cormorant Garamond', serif; font-size: 18px; letter-spacing: 10px; text-transform: uppercase; margin-top: 8px; opacity: 0.9;
+            color: var(--gold-light); 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 14px; 
+            letter-spacing: 12px; 
+            text-transform: uppercase; 
+            margin-top: 12px; 
+            opacity: 0.7;
         }
 
         .explore-btn { 
-            background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 14px 45px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 3px; cursor: pointer; margin-top: 55px;
+            background: transparent; 
+            border: 1px solid var(--gold-primary); 
+            color: var(--gold-primary); 
+            padding: 16px 55px; 
+            font-size: 11px; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            cursor: pointer; 
+            margin-top: 60px;
+            border-radius: 0px;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* --- الهيدر (ثابت فوق بالقمة ولا ينزل مع السكرول + حجم صغير حيل) --- */
+        .explore-btn:hover {
+            color: var(--brand-dark);
+            background-color: var(--gold-primary);
+            box-shadow: 0 10px 25px rgba(184,154,108,0.25);
+        }
+
+        /* --- الهيدر الفخم الثابت والمميز بالقمة --- */
         header { 
-            background-color: var(--brand-dark); 
-            padding: 14px 20px 12px; 
+            background-color: rgba(38, 28, 20, 0.98); 
+            backdrop-filter: blur(10px);
+            padding: 18px 20px 16px; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
@@ -62,34 +124,39 @@
             left: 0;
             width: 100%;
             z-index: 1000; 
+            border-bottom: 1px solid rgba(235, 220, 197, 0.08);
         }
+        
         .header-wrap {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             width: 100%;
-            max-width: 180px; 
+            max-width: 240px; 
         }
+        
         .header-wrap .logo { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 26px; 
+            font-size: 32px; 
             font-weight: 300; 
             color: var(--gold-light); 
-            letter-spacing: 5px; 
+            letter-spacing: 8px; 
             text-transform: uppercase;
-            line-height: 0.9;
-            margin-bottom: 5px;
-            margin-left: -5px; 
+            line-height: 1;
+            margin-bottom: 6px;
+            margin-left: -8px; 
         }
+        
         .logo-divider {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
             position: relative;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
+        
         .logo-divider::before {
             content: "";
             position: absolute;
@@ -97,160 +164,397 @@
             right: 0;
             top: 50%;
             height: 0.5px;
-            background-color: rgba(235, 220, 197, 0.25);
+            background-color: rgba(235, 220, 197, 0.2);
         }
+        
         .logo-divider .sparkle {
-            color: var(--gold-light);
-            font-size: 7px; 
-            background-color: var(--brand-dark);
-            padding: 0 6px;
+            color: var(--gold-primary);
+            font-size: 9px; 
+            background-color: #261c14;
+            padding: 0 10px;
             position: relative;
             z-index: 2;
-            line-height: 1;
         }
+        
         .header-wrap .sub-logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 6px; 
-            font-weight: 400;
-            color: rgba(235, 220, 197, 0.5);
-            letter-spacing: 3px;
+            font-size: 7px; 
+            font-weight: 300;
+            color: rgba(235, 220, 197, 0.6);
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-left: -3px;
+            margin-left: -4px;
         }
 
-        /* --- حاوية الهيكل العام للموقع --- */
+        /* --- الهيكل العام والتنسيق المحسن --- */
         .main-layout {
-            max-width: 1400px; margin: 90px auto 40px; padding: 0 25px;
-            display: flex; flex-direction: column; gap: 30px;
+            max-width: 1200px; 
+            margin: 140px auto 60px; 
+            padding: 0 30px;
+            display: flex; 
+            flex-direction: column; 
+            gap: 40px;
         }
 
-        /* --- البانر الإعلاني الكرت --- */
+        /* --- البانر الإعلاني الأنيق جداً --- */
         .hero-banner-wrapper { width: 100%; }
         .hero-banner {
-            background: #ffffff; 
-            border: 1px solid #eae1d4; 
-            border-radius: 4px; 
-            padding: 45px 20px; 
+            background: var(--bg-white); 
+            border: 1px solid var(--border-color); 
+            border-radius: 0px; 
+            padding: 60px 20px; 
             text-align: center; 
-            box-shadow: 0 10px 30px rgba(184,154,108,0.03);
+            box-shadow: 0 15px 40px rgba(38, 28, 20, 0.02);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            position: relative;
+        }
+        
+        .hero-banner::before {
+            content: "";
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid rgba(184, 154, 108, 0.15);
+            pointer-events: none;
         }
         
         .badge-box {
-            border: 1.5px solid var(--gold-primary);
-            border-radius: 50px;
-            padding: 14px 40px; 
+            border-bottom: 1px solid var(--gold-primary);
+            padding: 0 10px 15px 10px; 
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 18px;
-            margin-bottom: 18px;
-            max-width: 95%;
+            gap: 15px;
+            margin-bottom: 20px;
         }
+        
         .badge-box h2 { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 21px; 
-            color: var(--gold-primary); 
-            font-weight: 500; 
-            letter-spacing: 4px;
+            font-size: 26px; 
+            color: var(--brand-dark); 
+            font-weight: 400; 
+            letter-spacing: 5px;
             text-transform: uppercase;
-            line-height: 1;
         }
+        
         .badge-box .inner-sparkle {
             color: var(--gold-primary);
-            font-size: 11px;
-            opacity: 0.8;
+            font-size: 12px;
         }
-        .hero-banner p { font-size: 13px; color: #7a7065; letter-spacing: 0.5px; line-height: 1.5; font-weight: 500; max-width: 340px; margin-top: 5px; }
+        
+        .hero-banner p { 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px; 
+            color: #655b50; 
+            font-style: italic;
+            line-height: 1.6; 
+            max-width: 460px; 
+        }
 
-        /* حاوية المنتجات بالمنتصف */
+        /* --- حاوية عرض شبكة المنتجات (Premium Grid) --- */
         .products-wrapper { 
-            display: grid; grid-template-columns: 1fr 1fr; gap: 25px; width: 100%;
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 40px; 
+            width: 100%;
         }
+        
         @media (max-width: 768px) {
-            .products-wrapper { display: flex; flex-direction: column; gap: 0; }
+            .products-wrapper { 
+                display: flex; 
+                flex-direction: column; 
+                gap: 35px; 
+            }
         }
 
-        /* تصميم بطاقات المنتجات */
+        /* --- تصميم كروت المنتجات الاحترافي --- */
         .product-card { 
-            background: #ffffff; border: 1px solid #eee6dc; border-radius: 6px; padding: 14px; cursor: pointer; transition: 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-bottom: 25px; width: 100%;
+            background: var(--bg-white); 
+            border: 1px solid rgba(238, 230, 220, 0.7); 
+            border-radius: 0px; 
+            padding: 16px; 
+            cursor: pointer; 
+            transition: var(--transition-smooth); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+            position: relative;
         }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(184,154,108,0.12); }
         
-        .img-container { width: 100%; height: 320px; overflow: hidden; border-radius: 4px; margin-bottom: 12px; background: var(--bg-cream); }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .product-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px rgba(38, 28, 20, 0.06); 
+            border-color: var(--gold-primary);
+        }
         
-        .product-meta { text-align: right; }
-        .product-meta h3 { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; color: var(--brand-dark); }
-        .product-meta .desc { font-size: 11px; color: #8a7e72; margin-bottom: 8px; }
-        .product-meta .price { font-weight: 700; font-size: 14px; color: var(--brand-dark); margin-bottom: 12px; }
+        .img-container { 
+            width: 100%; 
+            height: 460px; 
+            overflow: hidden; 
+            background: var(--bg-cream); 
+            position: relative;
+        }
+        
+        @media (max-width: 480px) {
+            .img-container { height: 360px; }
+        }
+        
+        .img-container img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        .product-card:hover .img-container img {
+            transform: scale(1.05);
+        }
+        
+        .product-meta { 
+            text-align: center; 
+            padding: 20px 10px 5px 10px;
+        }
+        
+        .product-meta h3 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 20px; 
+            font-weight: 400; 
+            letter-spacing: 1px; 
+            margin-bottom: 6px; 
+            color: var(--brand-dark); 
+        }
+        
+        .product-meta .desc { 
+            font-size: 11px; 
+            color: var(--text-muted); 
+            margin-bottom: 12px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .product-meta .price { 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500; 
+            font-size: 16px; 
+            color: var(--gold-dark); 
+            margin-bottom: 18px; 
+        }
 
-        .card-btn { display: block; width: 100%; background: var(--brand-dark); color: var(--gold-light); text-align: center; padding: 10px; border-radius: 4px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-weight: 700; }
+        .card-btn { 
+            display: inline-block; 
+            width: 100%; 
+            background: var(--brand-dark); 
+            color: var(--gold-light); 
+            text-align: center; 
+            padding: 14px; 
+            font-size: 11px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            text-decoration: none; 
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+        
+        .product-card:hover .card-btn {
+            background: var(--gold-primary);
+            color: var(--brand-dark);
+        }
 
-        /* خانات قريباً بالأسفل */
-        .coming-soon-wrapper { width: 100%; margin-top: 5px; }
-        .coming-soon-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-        @media (max-width: 768px) { .coming-soon-grid { grid-template-columns: 1fr; gap: 10px; } }
+        /* --- قسم قريباً الفاخر بالأسفل --- */
+        .coming-soon-wrapper { width: 100%; margin-top: 15px; }
+        .coming-soon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 768px) { .coming-soon-grid { grid-template-columns: 1fr; gap: 15px; } }
         
         .soon-box { 
-            background: #ffffff; border: 1px solid #ebdcc5; border-radius: 6px; height: 75px; 
-            display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            text-align: center; padding: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.01); 
+            background: var(--bg-white); 
+            border: 1px solid var(--border-color); 
+            height: 90px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            padding: 15px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            position: relative;
         }
-        .soon-box .soon-text { color: var(--brand-dark); font-size: 11.5px; font-weight: 600; line-height: 1.4; }
+        
+        .soon-box .soon-text { 
+            color: var(--brand-dark); 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px; 
+            font-weight: 400; 
+            letter-spacing: 1px;
+        }
 
-        /* --- صفحة تفاصيل المنتج وسلايدر الصور --- */
+        /* --- شاشة تفاصيل المنتج وسلايدر الصور المتكامل --- */
         #pdp-screen {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 6000; overflow-y: auto; transform: translateY(100%); transition: transform 0.5s ease;
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: var(--bg-white); 
+            z-index: 99999; 
+            overflow-y: auto; 
+            transform: translateY(100%); 
+            transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
         }
+        
         #pdp-screen.active { transform: translateY(0); }
-        .pdp-header { padding: 45px 25px 15px; display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: auto; }
         
-        .slider-wrapper { position: relative; width: 100%; max-width: 500px; margin: 0 auto; padding: 0 20px; overflow: hidden; }
-        .pdp-slider { display: flex; width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        .pdp-header { 
+            padding: 50px 30px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 800px; 
+            margin: auto; 
+        }
+        
+        .slider-wrapper { 
+            position: relative; 
+            width: 100%; 
+            max-width: 550px; 
+            margin: 0 auto; 
+            padding: 0 25px; 
+            overflow: hidden; 
+        }
+        
+        .pdp-slider { 
+            display: flex; 
+            width: 100%; 
+            overflow-x: auto; 
+            scroll-snap-type: x mandatory; 
+            scroll-behavior: smooth; 
+            -webkit-overflow-scrolling: touch; 
+        }
+        
         .pdp-slider::-webkit-scrollbar { display: none; }
-        .pdp-slider img { width: 100%; flex-shrink: 0; scroll-snap-align: start; border-radius: 4px; object-fit: cover; }
+        .pdp-slider img { 
+            width: 100%; 
+            height: 580px;
+            flex-shrink: 0; 
+            scroll-snap-align: start; 
+            object-fit: cover; 
+        }
         
-        .slider-dots { display: flex; justify-content: center; gap: 6px; margin-top: 12px; margin-bottom: 15px; }
-        .dot { width: 8px; height: 8px; border-radius: 50%; background: #eee; transition: 0.3s; }
-        .dot.active { background: var(--gold-primary); width: 18px; border-radius: 4px; }
+        @media (max-width: 480px) {
+            .pdp-slider img { height: 420px; }
+        }
         
-        .pdp-container { max-width: 500px; margin: auto; padding: 25px; text-align: right; }
-        .pdp-title-row { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 5px; }
-        .pdp-title-row h1 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; }
-        .pdp-subtitle { font-size: 12px; color: #999; margin-bottom: 12px; }
-        .pdp-price { font-size: 20px; font-weight: 700; margin-bottom: 25px; color: var(--brand-dark); }
+        .slider-dots { 
+            display: flex; 
+            justify-content: center; 
+            gap: 8px; 
+            margin-top: 16px; 
+            margin-bottom: 20px; 
+        }
+        
+        .dot { 
+            width: 6px; 
+            height: 6px; 
+            border-radius: 50%; 
+            background: #e0e0e0; 
+            transition: var(--transition-smooth); 
+        }
+        
+        .dot.active { 
+            background: var(--gold-primary); 
+            width: 22px; 
+            border-radius: 10px; 
+        }
+        
+        .pdp-container { max-width: 550px; margin: auto; padding: 30px 25px; text-align: right; }
+        .pdp-title-row { display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .pdp-title-row h1 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--brand-dark); }
+        .pdp-subtitle { font-size: 12px; color: var(--text-muted); margin-bottom: 15px; letter-spacing: 1px; }
+        .pdp-price { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 500; margin-bottom: 30px; color: var(--gold-dark); }
 
-        .section-label { font-size: 11px; color: #bbb; text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; }
-        .size-selector { display: flex; flex-direction: row-reverse; gap: 10px; margin-bottom: 30px; }
-        .size-box { width: 46px; height: 46px; border: 1.5px solid #eee; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .section-label { font-size: 11px; color: #aaa; text-transform: uppercase; margin-bottom: 14px; display: block; letter-spacing: 2px; font-weight: 500; }
+        .size-selector { display: flex; flex-direction: row-reverse; gap: 12px; margin-bottom: 35px; }
+        .size-box { width: 50px; height: 50px; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 400; cursor: pointer; transition: var(--transition-smooth); }
         .size-box.active { border-color: var(--brand-dark); background: var(--brand-dark); color: #fff; }
 
-        .order-wa-button { display: block; width: 100%; background: var(--brand-dark); color: var(--gold-light); text-align: center; text-decoration: none; padding: 18px; border-radius: 50px; font-weight: 700; font-size: 13px; letter-spacing: 2px; margin-bottom: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .order-wa-button { 
+            display: block; 
+            width: 100%; 
+            background: var(--brand-dark); 
+            color: var(--gold-light); 
+            text-align: center; 
+            text-decoration: none; 
+            padding: 20px; 
+            font-weight: 600; 
+            font-size: 12px; 
+            letter-spacing: 3px; 
+            margin-bottom: 45px; 
+            box-shadow: 0 10px 30px rgba(38,28,20,0.15); 
+            transition: var(--transition-smooth);
+        }
+        
+        .order-wa-button:hover {
+            background: var(--gold-primary);
+            color: var(--brand-dark);
+        }
 
-        .payment-label { font-size: 10px; color: #ccc; text-transform: uppercase; margin-bottom: 15px; display: block; }
-        .pay-option { display: flex; align-items: center; justify-content: space-between; padding: 16px; border: 1.5px solid #eee; border-radius: 15px; margin-bottom: 12px; cursor: pointer; transition: 0.2s; }
-        .pay-option.active { border-color: var(--brand-dark); background: #fff; }
-        .pay-option .check-icon { width: 22px; height: 22px; border: 1.5px solid #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: transparent; }
+        .payment-label { font-size: 11px; color: #aaa; text-transform: uppercase; margin-bottom: 18px; display: block; letter-spacing: 2px; }
+        .pay-option { display: flex; align-items: center; justify-content: space-between; padding: 18px; border: 1px solid #eee; margin-bottom: 14px; cursor: pointer; transition: var(--transition-smooth); background: var(--bg-cream); }
+        .pay-option.active { border-color: var(--gold-primary); background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+        .pay-option .check-icon { width: 20px; height: 20px; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: transparent; }
         .pay-option.active .check-icon { background: #2ecc71; border-color: #2ecc71; color: white; }
-        .pay-info { display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 14px; }
+        .pay-info { display: flex; align-items: center; gap: 14px; font-weight: 500; font-size: 13px; letter-spacing: 0.5px; }
 
-        .wa-float { position: fixed; bottom: 30px; right: 25px; width: 60px; height: 60px; background: var(--whatsapp-green); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 4000; text-decoration: none; }
-        footer { text-align: center; padding: 30px; font-size: 10px; color: #bbb; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #eee; margin-top: 40px; }
+        /* --- الأزرار الطائرة والفوتر --- */
+        .wa-float { 
+            position: fixed; 
+            bottom: 40px; 
+            right: 30px; 
+            width: 65px; 
+            height: 65px; 
+            background: var(--whatsapp-green); 
+            color: white; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 32px; 
+            box-shadow: 0 10px 25px rgba(37,211,102,0.3); 
+            z-index: 999; 
+            text-decoration: none; 
+            transition: var(--transition-smooth);
+        }
+        
+        .wa-float:hover {
+            transform: scale(1.1);
+        }
+        
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            font-size: 9px; 
+            color: #aaa; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            border-top: 1px solid #f2ece4; 
+            margin-top: 60px; 
+        }
+
+        /* حركات الأنيميشن المخصصة */
+        @keyframes fadeInDeer {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
 
 <div id="landing-screen">
     <svg class="deer-svg" viewBox="0 0 100 100">
-        <path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke-width="2"/>
-        <path d="M40 45 L60 45 L55 75 L45 75 Z" fill="none" stroke-width="2.5"/>
+        <path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke-width="1.5"/>
+        <path d="M40 45 L60 45 L55 75 L45 75 Z" fill="none" stroke-width="2"/>
     </svg>
     <div class="logo-big">NVANE</div>
-    <div class="blazers-subtext">Blazers</div>
+    <div class="blazers-subtext">Luxury Blazers</div>
     <button class="explore-btn" onclick="enterStore()">Explore Collection</button>
 </div>
 
@@ -260,3 +564,234 @@
         <div class="logo-divider">
             <div class="sparkle">✦</div>
         </div>
+        <div class="sub-logo">BLAZERS FOR HER</div>
+    </div>
+</header>
+
+<div class="main-layout">
+    
+    <div class="hero-banner-wrapper">
+        <div class="hero-banner">
+            <div class="badge-box">
+                <span class="inner-sparkle">✦</span>
+                <h2>The New Collection</h2>
+                <span class="inner-sparkle">✦</span>
+            </div>
+            <p>Discover the essence of style: NVANE luxury blazers for women</p>
+        </div>
+    </div>
+
+    <div class="products-wrapper">
+        
+        <div class="product-card" onclick="openPDP('Butter Yellow Set', '46', ['https://a.top4top.io/p_37878wrd51.jpeg', 'https://f.top4top.io/p_3788e4qyi0.jpeg', 'https://g.top4top.io/p_3788bfsxw1.jpeg'], '🍦')">
+            <div class="img-container"><img src="https://a.top4top.io/p_37878wrd51.jpeg" alt="Butter Yellow Set"></div>
+            <div class="product-meta">
+                <h3>Butter Yellow Set 🍦</h3>
+                <div class="desc">(نفنوف + بليزر)</div>
+                <div class="price">KD 46</div>
+                <span class="card-btn">Order Via WhatsApp</span>
+            </div>
+        </div>
+
+        <div class="product-card" onclick="openPDP('The perfect Eid set \'26 🪄💌', '55', ['https://a.top4top.io/p_37880lsll1.jpeg', 'https://b.top4top.io/p_3788uufhi2.jpeg', 'https://d.top4top.io/p_3788cu95j4.jpeg', 'https://c.top4top.io/p_37887ufev3.jpeg'], '')">
+            <div class="img-container"><img src="https://a.top4top.io/p_37880lsll1.jpeg" alt="The perfect Eid set"></div>
+            <div class="product-meta">
+                <h3>The perfect Eid set '26 🪄💌</h3>
+                <div class="desc">(Size upon request)</div>
+                <div class="price">KD 55</div>
+                <span class="card-btn">Order Via WhatsApp</span>
+            </div>
+        </div>
+
+        <div class="product-card" onclick="openPDP('Black Satin Blazer', '36', ['https://k.top4top.io/p_37880nmxm1.jpeg', 'https://l.top4top.io/p_3788bngp12.jpeg', 'https://a.top4top.io/p_378890w893.jpeg', 'https://b.top4top.io/p_37883ew4y4.jpeg', 'https://c.top4top.io/p_3788l4leg5.jpeg'], '')">
+            <div class="img-container"><img src="https://k.top4top.io/p_37880nmxm1.jpeg" alt="Black Satin Blazer"></div>
+            <div class="product-meta">
+                <h3>Black Satin Blazer</h3>
+                <div class="desc">(Custom Sizes Available)</div>
+                <div class="price">KD 36</div>
+                <span class="card-btn">Order Via WhatsApp</span>
+            </div>
+        </div>
+
+        <div class="product-card" onclick="openPDP('توب عنابي ❣️', '19', ['https://c.top4top.io/p_3839rp08h0.jpeg', 'https://d.top4top.io/p_38393z7f41.jpeg'], '')">
+            <div class="img-container"><img src="https://c.top4top.io/p_3839rp08h0.jpeg" alt="توب عنابي"></div>
+            <div class="product-meta">
+                <h3>توب عنابي ❣️</h3>
+                <div class="desc">(Pre-order Available)</div>
+                <div class="price">KD 19</div>
+                <span class="card-btn">Order Via WhatsApp</span>
+            </div>
+        </div>
+
+        <div class="product-card" onclick="openPDP('ست كامل لنن ابيض 🤍', '45', ['https://e.top4top.io/p_3839qgk1v2.jpeg', 'https://f.top4top.io/p_3839f8whc3.jpeg', 'https://h.top4top.io/p_3839t3byi5.jpeg'], '')">
+            <div class="img-container"><img src="https://e.top4top.io/p_3839qgk1v2.jpeg" alt="ست كامل لنن ابيض"></div>
+            <div class="product-meta">
+                <h3>ست كامل لنن ابيض 🤍</h3>
+                <div class="desc">(Size upon request)</div>
+                <div class="price">KD 45</div>
+                <span class="card-btn">Order Via WhatsApp</span>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="coming-soon-wrapper">
+        <div class="coming-soon-grid">
+            <div class="soon-box"><div class="soon-text">سيتوفر قريباً بدعمكم 🦌</div></div>
+            <div class="soon-box"><div class="soon-text">سيتوفر قريباً بدعمكم 🦌</div></div>
+            <div class="soon-box"><div class="soon-text">سيتوفر قريباً بدعمكم 🦌</div></div>
+        </div>
+    </div>
+
+</div>
+
+<a href="https://wa.me/96564446249" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<div id="pdp-screen">
+    <div class="pdp-header">
+        <i class="fas fa-chevron-right" onclick="closePDP()" style="font-size: 20px; cursor: pointer; color: var(--brand-dark);"></i>
+        <i class="fas fa-ellipsis-v" style="color: #ddd;"></i>
+    </div>
+
+    <div class="slider-wrapper">
+        <div class="pdp-slider" id="slider-container" onscroll="updateDots()"></div>
+        <div class="slider-dots" id="dots-container"></div>
+    </div>
+
+    <div class="pdp-container">
+        <div class="pdp-title-row">
+            <span id="p-emoji"></span>
+            <h1 id="p-title">Product Name</h1>
+        </div>
+        <div class="pdp-subtitle" id="p-sub">(نفنوف + بليزر)</div>
+        <div class="pdp-price">KD <span id="p-price">0</span></div>
+
+        <span class="section-label">Size / المقاس</span>
+        <div class="size-selector">
+            <div class="size-box" onclick="setSize('XL', this)">XL</div>
+            <div class="size-box" onclick="setSize('L', this)">L</div>
+            <div class="size-box active" onclick="setSize('M', this)">M</div>
+            <div class="size-box" onclick="setSize('S', this)">S</div>
+        </div>
+
+        <a id="wa-final-link" href="#" class="order-wa-button" target="_blank">ORDER VIA WHATSAPP</a>
+
+        <span class="payment-label">PAYMENT / طريقة الدفع</span>
+        <div class="pay-option active" onclick="setPay('ومض عبر واتساب ⚡', this)">
+            <div class="check-icon"><i class="fas fa-check"></i></div>
+            <div class="pay-info"><span>ومض عبر واتساب</span><i class="fas fa-bolt" style="color: #f1c40f;"></i></div>
+        </div>
+        <div class="pay-option" onclick="setPay('لينك عبر واتساب 🔗', this)">
+            <div class="check-icon"><i class="fas fa-check"></i></div>
+            <div class="pay-info"><span>لينك عبر واتساب</span><i class="fas fa-link" style="color: #1a1410;"></i></div>
+        </div>
+        <div class="pay-option" onclick="setPay('الدفع عند الاستلام (كاش) 💵', this)">
+            <div class="check-icon"><i class="fas fa-check"></i></div>
+            <div class="pay-info"><span>الدفع عند الاستلام (كاش)</span><i class="fas fa-money-bill-wave" style="color: #2ecc71;"></i></div>
+        </div>
+    </div>
+</div>
+
+<footer>Design by BANANO</footer>
+
+<script>
+    const PHONE = "96564446249";
+    let currentP = ""; 
+    let currentPay = "ومض عبر واتساب ⚡"; 
+    let currentSize = "M";
+
+    // تفعيل الدخول الناعم للموقع
+    function enterStore() { 
+        const landing = document.getElementById('landing-screen');
+        landing.style.transform = 'translateY(-100%)'; 
+        setTimeout(() => landing.style.display = 'none', 1200);
+    }
+    
+    // فتح وعرض تفاصيل المنتج داخل الـ PDP بشكل احترافي
+    function openPDP(name, price, imgArray, emoji) {
+        currentP = name;
+        document.getElementById('p-title').innerText = name;
+        document.getElementById('p-price').innerText = price;
+        document.getElementById('p-emoji').innerText = emoji;
+        
+        // ذكاء التغيير التلقائي للوصف السفلي
+        if(name.includes('Eid set') || name.includes('Linen set') || name.includes('لنن')) {
+            document.getElementById('p-sub').innerText = "(Size upon request)";
+        } else if(name.includes('Black Satin Blazer')) {
+            document.getElementById('p-sub').innerText = "(Custom Sizes Available)";
+        } else {
+            document.getElementById('p-sub').innerText = "(نفنوف + بليزر)";
+        }
+        
+        const slider = document.getElementById('slider-container');
+        const dotsContainer = document.getElementById('dots-container');
+        slider.innerHTML = ""; 
+        dotsContainer.innerHTML = "";
+        
+        // بناء السلايدر والنقاط ديناميكياً
+        imgArray.forEach((imgUrl, index) => {
+            const img = document.createElement('img'); 
+            img.src = imgUrl;
+            img.alt = `${name} - ${index + 1}`;
+            slider.appendChild(img);
+            
+            const dot = document.createElement('div'); 
+            dot.className = `dot ${index === 0 ? 'active' : ''}`;
+            dotsContainer.appendChild(dot);
+        });
+
+        document.getElementById('pdp-screen').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('pdp-screen').classList.add('active');
+            slider.scrollLeft = 0; 
+            updateLink();
+        }, 30);
+    }
+
+    // تحديث نقاط السلايدر عند السحب بالأصابع
+    function updateDots() {
+        const slider = document.getElementById('slider-container');
+        const dots = document.querySelectorAll('.dot');
+        if(!slider || dots.length === 0) return;
+        
+        const index = Math.round(slider.scrollLeft / slider.clientWidth);
+        dots.forEach((dot, i) => {
+            if(i === Math.abs(index) && dot) {
+                dot.classList.add('active');
+            } else if(dot) {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // إغلاق تفاصيل المنتج بسلاسة
+    function closePDP() {
+        document.getElementById('pdp-screen').classList.remove('active');
+        setTimeout(() => document.getElementById('pdp-screen').style.display = 'none', 600);
+    }
+
+    // اختيار المقاس
+    function setSize(val, el) {
+        currentSize = val;
+        document.querySelectorAll('.size-box').forEach(b => b.classList.remove('active'));
+        el.classList.add('active'); 
+        updateLink();
+    }
+
+    // اختيار طريقة الدفع الفاخرة
+    function setPay(val, el) {
+        currentPay = val;
+        document.querySelectorAll('.pay-option').forEach(opt => opt.classList.remove('active'));
+        el.classList.add('active'); 
+        updateLink();
+    }
+
+    // تجهيز رسالة الواتساب الفورية الذكية والمحدثة للطلب
+    function updateLink() {
+        const msg = `مرحباً NVANE ✨\n\nأود طلب المنتج التالي 🦌:\nالملابس: ${currentP}\nالمقاس المحدد: ${currentSize}\nالدفع المفضل: ${currentPay}\n\nشكراً لكم 🤍`;
+        document.getElementById('wa-final-link').href = `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+    }
+</script>
+
+</body>
+</html>
