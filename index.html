@@ -7,7 +7,7 @@
     
     <!-- الأيقونات والخطوط الفاخرة المعتمدة للبراند -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         /* --- اللوحة اللونية الإبداعية الملكية للبراند --- */
@@ -19,8 +19,8 @@
             --gold-dark: #8c7149;
             --bg-cream: #faf7f2;
             --bg-white: #ffffff;
-            --text-muted: #7d7061; /* جعلنا لون النصوص الفرعية أغمق قليلًا لزيادة التباين والوضوح */
-            --border-soft: rgba(186, 155, 109, 0.25); /* توضيح الحدود قليلاً */
+            --text-muted: #5e5245; /* تغميق لون النصوص الفرعية بشكل ملحوظ لزيادة الوضوح والتباين */
+            --border-soft: rgba(186, 155, 109, 0.4); /* توضيح الحدود وجعلها أمتن */
             --whatsapp-green: #25D366;
             --premium-curve: cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -59,11 +59,11 @@
         }
         
         .deer-svg {
-            width: 80px; 
-            height: 80px; 
+            width: 90px; 
+            height: 90px; 
             fill: none; 
             stroke: var(--gold-primary); 
-            stroke-width: 1.5; /* زيادة متانة الوعل */
+            stroke-width: 2.5; /* زيادة متانة خطوط الوعل */
             margin-bottom: 25px;
             animation: pulseDeer 3s infinite ease-in-out;
         }
@@ -71,31 +71,31 @@
         #landing-screen .logo-big { 
             font-family: 'Cormorant Garamond', serif; 
             color: var(--gold-primary); 
-            font-size: 65px; 
+            font-size: 70px; 
             letter-spacing: 25px; 
             text-transform: uppercase; 
             margin-left: -25px; 
-            font-weight: 400; /* جعلنا خط شعار الدخول أمتن */
+            font-weight: 700; /* خط غليظ وواضح جداً لشعار الدخول */
         }
 
         .blazers-subtext {
             color: var(--gold-light); 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: 14px; 
+            font-size: 16px; 
             letter-spacing: 12px; 
             text-transform: uppercase; 
             margin-top: 15px; 
-            opacity: 0.7; /* زيادة الوضوح */
-            font-weight: 500;
+            opacity: 0.9; 
+            font-weight: 700; /* خط أمتن */
         }
 
         .explore-btn { 
             background: transparent; 
-            border: 2px solid var(--gold-primary); /* حواف أمتن */
+            border: 3px solid var(--gold-primary); /* حواف أغلظ */
             color: var(--gold-primary); 
-            padding: 16px 55px; 
-            font-size: 12px; 
-            font-weight: 600; /* خط أوضح */
+            padding: 18px 60px; 
+            font-size: 14px; 
+            font-weight: 800; /* زيادة متانة خط الزر */
             text-transform: uppercase; 
             letter-spacing: 4px; 
             cursor: pointer; 
@@ -106,12 +106,12 @@
         .explore-btn:hover {
             color: var(--brand-dark);
             background-color: var(--gold-primary);
-            box-shadow: 0 15px 35px rgba(184,154,108,0.25);
+            box-shadow: 0 15px 35px rgba(184,154,108,0.3);
         }
 
         /* --- الهيدر الطائر المستوحى من مجلات الأزياء الراقية --- */
         header { 
-            background-color: rgba(250, 247, 242, 0.95); 
+            background-color: rgba(250, 247, 242, 0.97); 
             backdrop-filter: blur(20px);
             padding: 25px 40px; 
             display: flex; 
@@ -122,13 +122,13 @@
             left: 0;
             width: 100%;
             z-index: 1000; 
-            border-bottom: 1.5px solid var(--border-soft);
+            border-bottom: 2px solid var(--border-soft); /* إطار هيدر أمتن */
         }
         
         .header-brand {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
-            font-weight: 500; /* خط أمتن للهيدر */
+            font-size: 36px; /* تكبير الشعار */
+            font-weight: 700; /* خط عريض وممتاز للشعار بالهيدر */
             letter-spacing: 12px;
             color: var(--brand-dark);
             text-decoration: none;
@@ -136,17 +136,17 @@
         }
 
         .header-tag {
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--brand-dark); /* جعلناه بلون البراند الغامق ليكون أوضح بكثير */
-            font-weight: 700; /* خط عريض وبارز */
+            color: var(--brand-dark); 
+            font-weight: 800; /* خط غليظ وواضح جداً بالهيدر */
         }
 
         /* --- الهيكل الرئيسي المبتكر للمحتوى --- */
         .main-layout {
             max-width: 1100px; 
-            margin: 150px auto 100px; 
+            margin: 170px auto 100px; 
             padding: 0 25px;
         }
 
@@ -159,15 +159,15 @@
 
         .intro-section .sparkle {
             color: var(--gold-primary);
-            font-size: 16px;
+            font-size: 20px;
             margin-bottom: 20px;
             display: inline-block;
         }
 
         .intro-section h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 46px;
-            font-weight: 400; /* أمتن */
+            font-size: 52px; /* تكبير العنوان */
+            font-weight: 700; /* زيادة سماكة خط العنوان */
             letter-spacing: 2px;
             color: var(--brand-dark);
             text-transform: uppercase;
@@ -176,13 +176,13 @@
 
         .intro-section p {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
+            font-size: 22px; /* حجم أوضح */
             font-style: italic;
             color: var(--text-muted);
-            max-width: 500px;
+            max-width: 550px;
             margin: 0 auto;
             line-height: 1.6;
-            font-weight: 500; /* خط أوضح */
+            font-weight: 600; /* توضيح وسماكة الخط لوصف التقديم */
         }
 
         /* --- الشبكة غير المتناظرة الإبداعية (Asymmetric Grid) --- */
@@ -220,7 +220,7 @@
             overflow: hidden;
             background-color: var(--bg-white);
             padding: 15px;
-            border: 1px solid var(--border-soft);
+            border: 2px solid var(--border-soft); /* جعل الحدود الخارجية للكرت أمتن */
             box-shadow: 0 10px 40px rgba(33, 25, 18, 0.02);
             transition: all 0.6s var(--premium-curve);
         }
@@ -235,9 +235,9 @@
             height: 200%;
             background: conic-gradient(
                 transparent, 
-                rgba(186, 155, 109, 0.1) 10%, 
+                rgba(186, 155, 109, 0.15) 10%, 
                 var(--gold-primary) 20%, 
-                rgba(186, 155, 109, 0.1) 30%, 
+                rgba(186, 155, 109, 0.15) 30%, 
                 transparent 45%
             );
             animation: goldRotate 5s linear infinite;
@@ -249,7 +249,7 @@
         .frame-container::after {
             content: '';
             position: absolute;
-            inset: 1px;
+            inset: 2px; /* تعديل طفيف ليتماشى مع الحدود السميكة */
             background: var(--bg-white);
             z-index: 2;
             pointer-events: none;
@@ -276,7 +276,7 @@
         /* تأثيرات الفخامة واللمس */
         .luxury-item:hover .frame-container {
             border-color: var(--gold-primary);
-            box-shadow: 0 30px 60px rgba(33, 25, 18, 0.08);
+            box-shadow: 0 30px 60px rgba(33, 25, 18, 0.1);
             transform: translateY(-5px);
         }
 
@@ -291,15 +291,15 @@
 
         .item-details h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 26px; /* تكبير اسم المنتج */
-            font-weight: 500; /* خط أمتن */
+            font-size: 28px; /* حجم كبير وواضح لاسم المنتج */
+            font-weight: 700; /* خط أمتن ومميز جداً لاسم المنتج */
             color: var(--brand-dark);
             margin-bottom: 8px;
         }
 
         .item-details .subtitle {
-            font-size: 12px;
-            font-weight: 600; /* خط أوضح وأمتن */
+            font-size: 13px;
+            font-weight: 700; /* سماكة الخط الفرعي للمنتج */
             color: var(--text-muted);
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -308,8 +308,8 @@
 
         .item-details .price-tag {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700; /* خط عريض وممتاز للسعر */
-            font-size: 18px; /* حجم أوضح */
+            font-weight: 800; /* خط عريض جداً وواضح للسعر */
+            font-size: 20px; /* تكبير السعر لسهولة الرؤية */
             color: var(--gold-dark);
             position: relative;
             display: inline-block;
@@ -321,45 +321,45 @@
             content: "";
             position: absolute;
             bottom: 0;
-            left: 25%;
-            width: 50%;
-            height: 1.5px;
+            left: 20%;
+            width: 60%;
+            height: 2px; /* خط فاصل أمتن تحت السعر */
             background-color: var(--gold-primary);
-            opacity: 0.6;
+            opacity: 0.8;
         }
 
-        /* زر "إتمام الطلب" الجديد والمتحرك بنبض فخم وجذاب */
+        /* زر "إتمام الطلب" المتحرك بنبض وتوهج ذهبي جذاب للغاية */
         .quick-order-btn {
             display: block;
             width: fit-content;
             margin: 0 auto;
-            padding: 12px 28px;
-            font-size: 12px;
-            font-weight: 700; /* خط واضح وأمتن للزر */
+            padding: 14px 32px; /* توسيع حواف الزر */
+            font-size: 13px;
+            font-weight: 800; /* خط غليظ ومكتنز للزر لزيادة الوضوح والجاذبية */
             letter-spacing: 2px;
             color: var(--gold-dark);
             background: #fffcf9;
-            border: 1.5px solid var(--gold-primary); /* حدود أوضح */
+            border: 2px solid var(--gold-primary); /* حدود أمتن */
             cursor: pointer;
             position: relative;
             overflow: hidden;
             transition: all 0.4s var(--premium-curve);
-            animation: elegantPulse 2.5s infinite ease-in-out; /* حركة النبض الفاخرة للزر */
+            animation: elegantPulse 2.5s infinite ease-in-out; /* تفعيل الأنيميشن */
         }
 
-        /* أنيميشن النبض الفاخر مع توهج ناعم يعكس ألوان الموقع */
+        /* أنيميشن النبض الفاخر مع التوهج الناعم */
         @keyframes elegantPulse {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(186, 155, 109, 0.2);
+                box-shadow: 0 0 0 0 rgba(186, 155, 109, 0.3);
             }
             50% {
-                transform: scale(1.04);
-                box-shadow: 0 0 15px 4px rgba(186, 155, 109, 0.4);
+                transform: scale(1.05);
+                box-shadow: 0 0 18px 5px rgba(186, 155, 109, 0.5);
             }
             100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(186, 155, 109, 0.2);
+                box-shadow: 0 0 0 0 rgba(186, 155, 109, 0.3);
             }
         }
 
@@ -367,8 +367,8 @@
             background: var(--brand-dark);
             color: var(--gold-light);
             border-color: var(--brand-dark);
-            animation-play-state: paused; /* إيقاف الحركة مؤقتاً عند مرور الماوس لتسهيل الضغط */
-            transform: scale(1.05);
+            animation-play-state: paused; /* إيقاف مؤقت للنبض عند الحوم لتسهيل النقر */
+            transform: scale(1.06);
         }
 
         /* --- شاشة عرض تفاصيل المنتج السفلية المبتكرة (Bottom Sheet Drawer) --- */
@@ -400,15 +400,16 @@
         #pdp-overlay.active #pdp-drawer { transform: translateY(0); }
 
         .drawer-handle {
-            width: 40px; height: 5px; background: #e0dcd5; border-radius: 10px;
+            width: 45px; height: 6px; background: #ebdcc5; border-radius: 10px; /* هاندل أمتن للدرج */
             margin: 15px auto 25px;
         }
 
         .drawer-close {
             position: absolute; top: 25px; right: 25px;
-            font-size: 20px; cursor: pointer; color: var(--brand-dark);
-            width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+            font-size: 22px; cursor: pointer; color: var(--brand-dark);
+            width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
             border-radius: 50%; background: var(--bg-cream);
+            border: 1.5px solid var(--border-soft);
         }
 
         .drawer-content {
@@ -418,7 +419,7 @@
         /* سلايدر الصور الفخم داخل الدرج */
         .media-viewer {
             position: relative; width: 100%; overflow: hidden; margin-bottom: 30px;
-            border: 1.5px solid var(--border-soft);
+            border: 2px solid var(--border-soft); /* حدود عريضة وواضحة لبرواز المعرض */
             z-index: 5;
         }
 
@@ -440,49 +441,49 @@
         .track-indicators {
             display: flex; justify-content: center; gap: 8px; margin: 20px 0;
         }
-        .indicator-dot { width: 6px; height: 6px; border-radius: 50%; background: #e8e3da; transition: all 0.4s; }
-        .indicator-dot.active { background: var(--gold-primary); width: 20px; border-radius: 10px; }
+        .indicator-dot { width: 8px; height: 8px; border-radius: 50%; background: #e8e3da; transition: all 0.4s; }
+        .indicator-dot.active { background: var(--gold-primary); width: 22px; border-radius: 10px; }
 
-        .pdp-main-title { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 500; color: var(--brand-dark); margin-bottom: 8px; }
-        .pdp-meta-sub { font-size: 13px; font-weight: 600; color: var(--text-muted); letter-spacing: 1.5px; margin-bottom: 20px; }
-        .pdp-main-price { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 700; color: var(--gold-dark); margin-bottom: 35px; }
+        .pdp-main-title { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: var(--brand-dark); margin-bottom: 8px; }
+        .pdp-meta-sub { font-size: 14px; font-weight: 700; color: var(--text-muted); letter-spacing: 1.5px; margin-bottom: 20px; }
+        .pdp-main-price { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--gold-dark); margin-bottom: 35px; }
 
-        .label-text { font-size: 12px; color: var(--brand-dark); text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 2px; font-weight: 700; }
+        .label-text { font-size: 13px; color: var(--brand-dark); text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 2px; font-weight: 800; }
         
         .premium-sizes { display: flex; flex-direction: row-reverse; gap: 12px; margin-bottom: 25px; }
-        .size-token { width: 52px; height: 52px; border: 1.5px solid #ebdcc5; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .size-token { width: 55px; height: 55px; border: 2px solid #ebdcc5; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.3s; }
         .size-token.selected { border-color: var(--brand-dark); background: var(--brand-dark); color: #fff; }
 
         /* زر دليل القياسات التفاعلي */
         .size-guide-trigger {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13px;
+            gap: 10px;
+            font-size: 14px;
             color: var(--gold-dark);
             cursor: pointer;
             margin-bottom: 35px;
-            font-weight: 600;
+            font-weight: 700; /* خط عريض وممتاز لزر دليل القياسات */
             transition: color 0.3s;
             background: #fffcf9;
-            padding: 10px 20px;
-            border: 1.5px dashed var(--gold-primary);
+            padding: 12px 24px;
+            border: 2px dashed var(--gold-primary); /* حدود أمتن */
         }
         .size-guide-trigger:hover { color: var(--brand-dark); }
 
         /* زر الإجراء الرئيسي الفاخر */
         .action-wa-btn {
             display: block; width: 100%; background: var(--brand-dark); color: var(--gold-light);
-            text-align: center; text-decoration: none; padding: 22px; font-weight: 700; font-size: 13px;
+            text-align: center; text-decoration: none; padding: 22px; font-weight: 800; font-size: 14px;
             letter-spacing: 3px; margin-bottom: 45px; transition: all 0.5s var(--premium-curve);
         }
         .action-wa-btn:hover { background: var(--gold-primary); color: var(--brand-dark); }
 
-        .pay-card { display: flex; align-items: center; justify-content: space-between; padding: 20px; border: 1.5px solid #eee4d5; margin-bottom: 14px; cursor: pointer; background: var(--bg-cream); transition: all 0.3s; }
+        .pay-card { display: flex; align-items: center; justify-content: space-between; padding: 20px; border: 2px solid #eee4d5; margin-bottom: 14px; cursor: pointer; background: var(--bg-cream); transition: all 0.3s; }
         .pay-card.selected { border-color: var(--gold-primary); background: #fff; }
-        .pay-card .radio-box { width: 22px; height: 22px; border: 1.5px solid #ccc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: transparent; }
+        .pay-card .radio-box { width: 24px; height: 24px; border: 2px solid #ccc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: transparent; }
         .pay-card.selected .radio-box { background: #2ecc71; border-color: #2ecc71; color: white; }
-        .pay-title { display: flex; align-items: center; gap: 15px; font-weight: 700; font-size: 14px; color: var(--brand-dark); }
+        .pay-title { display: flex; align-items: center; gap: 15px; font-weight: 800; font-size: 15px; color: var(--brand-dark); }
 
         /* شاشة عرض صور دليل القياسات المنبثقة (Image Viewer Modal) */
         #chart-modal {
@@ -504,6 +505,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            border: 2px solid var(--gold-primary);
         }
         .modal-container img {
             width: 100%;
@@ -514,33 +516,34 @@
         }
         .modal-close {
             position: absolute; top: 15px; left: 15px;
-            width: 36px; height: 36px; background: rgba(250, 247, 242, 0.9);
+            width: 38px; height: 38px; background: rgba(250, 247, 242, 0.95);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; color: var(--brand-dark); font-size: 16px; z-index: 10;
+            cursor: pointer; color: var(--brand-dark); font-size: 18px; z-index: 10;
+            border: 1.5px solid var(--border-soft);
         }
 
         /* قسم قريباً الفاخر بتصميم الأسطر */
         .coming-soon-strip {
-            margin-top: 100px; border-top: 1.5px solid var(--border-soft); padding-top: 40px;
+            margin-top: 100px; border-top: 2px solid var(--border-soft); padding-top: 40px;
             display: flex; justify-content: space-between; gap: 20px;
         }
         @media (max-width: 768px) { .coming-soon-strip { flex-direction: column; text-align: center; } }
-        .strip-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--brand-dark); letter-spacing: 1px; }
+        .strip-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--brand-dark); letter-spacing: 1px; }
 
         /* --- أيقونة خدمة العملاء واتساب العائمة والمتحركة على اليمين --- */
         .floating-wa { 
             position: fixed; 
             bottom: 40px; 
             right: 30px; 
-            width: 64px; 
-            height: 64px; 
+            width: 66px; 
+            height: 66px; 
             background: var(--whatsapp-green); 
             color: white; 
             border-radius: 50%; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            font-size: 32px; 
+            font-size: 34px; 
             box-shadow: 0 10px 30px rgba(37,211,102,0.4); 
             z-index: 999; 
             text-decoration: none; 
@@ -552,7 +555,7 @@
             transform: scale(1.1);
         }
 
-        /* أنيميشن ناعم وجذاب للأيقونة لجذب العملاء */
+        /* أنيميشن ناعم للأيقونة لجذب العملاء */
         @keyframes bounceAndPulse {
             0%, 100% {
                 transform: translateY(0) scale(1);
@@ -564,10 +567,10 @@
             }
         }
         
-        footer { text-align: center; padding: 60px 20px; font-size: 10px; font-weight: 600; color: var(--text-muted); letter-spacing: 4px; text-transform: uppercase; }
+        footer { text-align: center; padding: 60px 20px; font-size: 11px; font-weight: 800; color: var(--text-muted); letter-spacing: 4px; text-transform: uppercase; }
 
         @keyframes pulseDeer {
-            0%, 100% { opacity: 0.6; transform: scale(1); }
+            0%, 100% { opacity: 0.7; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.05); }
         }
     </style>
@@ -577,8 +580,8 @@
 <!-- شاشة الترحيب الرأسية الفاخرة -->
 <div id="landing-screen">
     <svg class="deer-svg" viewBox="0 0 100 100">
-        <path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke-width="1.5"/>
-        <path d="M40 45 L60 45 L55 75 L45 75 Z" fill="none" stroke-width="1.5"/>
+        <path d="M50 35 L50 45 M50 35 C40 20 30 25 25 35 M50 35 C60 20 70 25 75 35" stroke-width="2.5"/>
+        <path d="M40 45 L60 45 L55 75 L45 75 Z" fill="none" stroke-width="2.5"/>
     </svg>
     <div class="logo-big">NVANE</div>
     <div class="blazers-subtext">Luxury Blazers</div>
@@ -759,7 +762,7 @@
     let selectedProduct = ""; 
     let selectedPayOption = "ومض عبر واتساب ⚡"; 
     let selectedSizeOption = "M";
-    let currentCategory = "blazer"; // لتحديد صورة جدول القياس المناسب
+    let currentCategory = "blazer"; 
 
     // روابط صور الجداول التي قمت بتقديمها لتعرض بسلاسة
     const CHART_IMAGES = {
@@ -775,7 +778,7 @@
     // فتح تفاصيل المنتج بالدرج المنبثق الفاخر
     function launchPDP(name, price, images, emoji, category = 'blazer') {
         selectedProduct = name;
-        currentCategory = category; // حفظ نوع القطعة لربطها بالجدول الصح
+        currentCategory = category; 
         
         document.getElementById('lbl-title').innerText = `${name} ${emoji}`;
         document.getElementById('lbl-price').innerText = price;
@@ -819,9 +822,7 @@
         const modal = document.getElementById('chart-modal');
         const imgView = document.getElementById('chart-img-view');
         
-        // عرض جدول قياسات البدلة السوداء أو الفستان البيج تلقائياً حسب نوع المنتج المفتوح
         imgView.src = CHART_IMAGES[currentCategory] || CHART_IMAGES.blazer;
-        
         modal.style.display = 'flex';
     }
 
