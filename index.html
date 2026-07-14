@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -211,6 +210,7 @@
             }
         }
 
+        /* برواز المنتج والـ Effect الذهبي اللامع والمتحرك */
         .frame-container {
             width: 100%;
             position: relative;
@@ -222,11 +222,48 @@
             transition: all 0.6s var(--premium-curve);
         }
 
+        /* طبقة اللمعان الذهبي المتحرك المار على الحواف بشكل دائري وفخم */
+        .frame-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent, 
+                rgba(186, 155, 109, 0.1) 10%, 
+                var(--gold-primary) 20%, 
+                rgba(186, 155, 109, 0.1) 30%, 
+                transparent 45%
+            );
+            animation: goldRotate 5s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* إطار داخلي لحماية المحتوى والمحافظة على النقاء البصري */
+        .frame-container::after {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: var(--bg-white);
+            z-index: 2;
+            pointer-events: none;
+        }
+
         .frame-container img {
+            position: relative;
             width: 100%;
             height: 520px;
             object-fit: cover;
             transition: transform 1.2s var(--premium-curve);
+            z-index: 3;
+        }
+
+        @keyframes goldRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         @media (max-width: 480px) {
@@ -236,7 +273,7 @@
         /* تأثيرات الفخامة واللمس */
         .luxury-item:hover .frame-container {
             border-color: var(--gold-primary);
-            box-shadow: 0 30px 60px rgba(33, 25, 18, 0.06);
+            box-shadow: 0 30px 60px rgba(33, 25, 18, 0.08);
             transform: translateY(-5px);
         }
 
@@ -273,6 +310,7 @@
             position: relative;
             display: inline-block;
             padding-bottom: 5px;
+            margin-bottom: 15px;
         }
 
         .item-details .price-tag::after {
@@ -284,6 +322,28 @@
             height: 1px;
             background-color: var(--gold-primary);
             opacity: 0.4;
+        }
+
+        /* زر "إتمام الطلب" الجديد تحت السعر */
+        .quick-order-btn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 10px 24px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--gold-dark);
+            background: #fffcf9;
+            border: 1px solid var(--gold-primary);
+            cursor: pointer;
+            transition: all 0.4s var(--premium-curve);
+        }
+
+        .luxury-item:hover .quick-order-btn {
+            background: var(--brand-dark);
+            color: var(--gold-light);
+            border-color: var(--brand-dark);
         }
 
         /* --- شاشة عرض تفاصيل المنتج السفلية المبتكرة (Bottom Sheet Drawer) --- */
@@ -334,6 +394,7 @@
         .media-viewer {
             position: relative; width: 100%; overflow: hidden; margin-bottom: 30px;
             border: 1px solid var(--border-soft);
+            z-index: 5;
         }
 
         .image-track {
@@ -527,6 +588,7 @@
                 <h3>Butter Yellow Set 🍦</h3>
                 <div class="subtitle">(نفنوف + بليزر)</div>
                 <div class="price-tag">KD 46</div>
+                <button class="quick-order-btn">إتمام الطلب</button>
             </div>
         </div>
 
@@ -539,10 +601,11 @@
                 <h3>The perfect Eid set '26 🪄💌</h3>
                 <div class="subtitle">(Size upon request)</div>
                 <div class="price-tag">KD 55</div>
+                <button class="quick-order-btn">إتمام الطلب</button>
             </div>
         </div>
 
-        <!-- منتج 3 (المنتج الجديد الإضافي - ست كامل زيتي) -->
+        <!-- منتج 3 -->
         <div class="luxury-item" onclick="launchPDP('ست كامل زيتي 🫒', '36', ['https://c.top4top.io/p_38472cpa50.jpeg', 'https://d.top4top.io/p_38478xkc11.jpeg', 'https://e.top4top.io/p_38476l1kt2.jpeg', 'https://f.top4top.io/p_38473bqjc3.jpeg'], '', 'suit')">
             <div class="frame-container">
                 <img src="https://c.top4top.io/p_38472cpa50.jpeg" alt="ست كامل زيتي">
@@ -551,6 +614,7 @@
                 <h3>ست كامل زيتي 🫒</h3>
                 <div class="subtitle">(بليزر وبنطلون)</div>
                 <div class="price-tag">KD 36</div>
+                <button class="quick-order-btn">إتمام الطلب</button>
             </div>
         </div>
 
@@ -563,6 +627,7 @@
                 <h3>Black Satin Blazer</h3>
                 <div class="subtitle">(Custom Sizes Available)</div>
                 <div class="price-tag">KD 36</div>
+                <button class="quick-order-btn">إتمام الطلب</button>
             </div>
         </div>
 
@@ -575,6 +640,7 @@
                 <h3>توب عنابي ❣️</h3>
                 <div class="subtitle">(Pre-order Available)</div>
                 <div class="price-tag">KD 19</div>
+                <button class="quick-order-btn">إتمام الطلب</button>
             </div>
         </div>
 
@@ -587,6 +653,7 @@
                 <h3>ست كامل لنن ابيض 🤍</h3>
                 <div class="subtitle">(Size upon request)</div>
                 <div class="price-tag">KD 45</div>
+                <button class="quick-order-btn">إتمام الطلب</button>
             </div>
         </div>
 
@@ -602,7 +669,7 @@
 </div>
 
 <!-- أيقونة خدمة العملاء واتساب العائمة على اليمين مع حركة تفاعلية -->
-<a href="https://wa.me/96564446249?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20NVANE%20%E2%9C%A8%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D8%A7%D9%85%D9%8A%D9%85%D9%83%D9%85%20%F0%9F%A6%8C" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/96564446249?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20NVANE%20%E2%9C%A8%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D8%A7%D9%85%D9%89%D9%85%D9%83%D9%85%20%F0%9F%A6%8C" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <!-- درج تفاصيل المنتجات المبتكر بالكامل (Bottom Drawer Modal) -->
 <div id="pdp-overlay" onclick="closeDrawer(event)">
